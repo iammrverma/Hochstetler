@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(28, 26, 26, 0.87);
+  background-color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --base-color-hochstetler-brand--hlh-text: var(
+    --base-color-hochstetler-brand--hlh-dark
+  );
+  --base-color-hochstetler-brand--hlh-green: #505616;
+  --background-color--background-primary: var(--base-color-neutral--black);
+  --text-color--text-alternate: var(--base-color-neutral--white);
+  --text-color--text-primary: var(--base-color-neutral--black);
+  --text-color--text-secondary: var(--base-color-neutral--neutral-darker);
+  --background-color--background-success: var(
+    --base-color-system--success-green
+  );
+  --text-color--text-success: var(--base-color-system--success-green-dark);
+  --quincy-cf: quincy-cf, sans-serif;
+  --border-color--border-primary: var(--base-color-neutral--neutral-lightest);
+  --background-color--background-alternate: var(--base-color-neutral--white);
+  --base-color-hochstetler-brand--hlh-dark: #272524;
+  --background-color--background-secondary: var(--base-color-brand--blue);
+  --link-color--link-primary: var(--base-color-brand--blue);
+  --background-color--background-tertiary: var(--base-color-brand--pink);
+  --background-color--background-error: var(--base-color-system--error-red);
+  --text-color--text-error: var(--base-color-system--error-red-dark);
+  --border-color--border-alternate: var(--base-color-neutral--neutral-darker);
+  --background-color--background-warning: var(
+    --base-color-system--warning-yellow
+  );
+  --text-color--text-warning: var(--base-color-system--warning-yellow-dark);
+  --radius--round: 999rem;
+  --untitled-ui--white: white;
+  --base-color-hochstetler-brand--hlh-beige-med: #f4e9da;
+  --base-color-hochstetler-brand--hlh-beige-light: #f9f6f2;
+  --base-color-hochstetler-brand--hlh-red: #db5e02;
+  --base-color-hochstetler-brand--hlh-green-accent: #b1b347;
+  --base-color-neutral--white: #fff;
+  --untitled-ui--gray100: #f2f4f7;
+  --radius--radius-med: 16px;
+  --base-color-neutral--neutral-lighter: #ccc;
+  --radius--radius-small: 8px;
+  --base-color-hochstetler-brand--hlh-green-light: #8b8d3c;
+  --base-color-neutral--neutral-light: #aaa;
+  --base-color-system--error-red-dark: #990909;
+  --base-color-system--success-green-dark: #27811e;
+  --base-color-system--success-green: #cef5ca;
+  --untitled-ui--gray500: #667085;
+  --untitled-ui--gray50: #f9fafb;
+  --untitled-ui--gray900: #101828;
+  --untitled-ui--gray700: #344054;
+  --untitled-ui--gray600: #475467;
+  --base-color-neutral--black: #000;
+  --untitled-ui--primary600: #7f56d9;
+  --untitled-ui--gray200: #eaecf0;
+  --untitled-ui--gray300: #d0d5dd;
+  --untitled-ui--gray800: #1d2939;
+  --base-color-hochstetler-brand--hlh-brown: #4f4038;
+  --untitled-ui--primary700: #6941c6;
+  --untitled-ui--primary800: #53389e;
+  --radius--radius-large: 20px;
+  --radius--radius-xlarge: 32px;
+  --untitled-ui--primary300: #d6bbfb;
+  --untitled-ui--primary100: #f4ebff;
+  --base-color-system--error-red: #f8e4e4;
+  --untitled-ui--gray400: #98a2b3;
+  --radius--radius-xsmall: 4px;
+  --base-color-hochstetler-brand--hlh-red-light: #f4a76b;
+  --base-color-brand--blue-light: #d9e5ff;
+  --base-color-brand--blue: #2d62ff;
+  --base-color-brand--blue-dark: #080331;
+  --base-color-brand--pink-light: #ffaefe;
+  --base-color-brand--pink: #dd23bb;
+  --base-color-brand--pink-dark: #3c043b;
+  --base-color-neutral--neutral-lightest: #eee;
+  --base-color-neutral--neutral: #666;
+  --base-color-neutral--neutral-dark: #444;
+  --base-color-neutral--neutral-darker: #222;
+  --base-color-neutral--neutral-darkest: #111;
+  --base-color-system--warning-yellow: #fcf8d8;
+  --base-color-system--warning-yellow-dark: #5e5515;
+  --base-color-system--focus-state: #2d62ff;
+  --border-color--border-secondary: var(--base-color-brand--blue);
+  --link-color--link-secondary: var(--base-color-neutral--black);
+  --link-color--link-alternate: var(--base-color-neutral--white);
+  --untitled-ui--primary50: #f9f5ff;
+  --untitled-ui--success700: #027a48;
+  --untitled-ui--success50: #ecfdf3;
+  --untitled-ui--primary200: #e9d7fe;
+  --untitled-ui--warning300: #fec84b;
+  --untitled-ui--pink700: #c11574;
+  --untitled-ui--indigo700: #3538cd;
+  --untitled-ui--pink50: #fdf2fa;
+  --untitled-ui--indigo50: #eef4ff;
+  --untitled-ui--primary500: #9e77ed;
+}
+
+html {
+  font-size: clamp(12px, 2vw, 16px);
+}
+
+body {
+  color: var(--base-color-hochstetler-brand--hlh-text);
+}
+
+h1 {
+  font-size: clamp(4rem, 6vw, 6rem);
+  font-family: var(--quincy-cf);
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+h2{
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+h3 {
+  letter-spacing: -0.02em;
+  font-family: inter-variable, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.container-large-2{
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: var(--base-color-neutral--white);
+}
+.text-dark {
+  color: var(--base-color-hochstetler-brand--hlh-dark);
+}
+.text-green {
+  color: var(--base-color-hochstetler-brand--hlh-green);
+}
+.text-green-accent {
+  color: var(--base-color-hochstetler-brand--hlh-green-accent);
+}
+
+.text-size-regular {
+  font-family: inter-variable, sans-serif;
+  font-size: 1rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.min-h-full {
+  min-height: 100vh;
+}
+.primary-btn {
+  border: 2px solid var(--base-color-hochstetler-brand--hlh-red);
+  border-radius: var(--radius--round);
+  background-color: var(--base-color-hochstetler-brand--hlh-red);
+  color: var(--text-color--text-alternate);
+  text-align: center;
+  padding: 0.5rem 2.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.grid-2-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding:4rem;
+}
+
+.grid-4-1{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.primary-btn:hover {
+  background-color: var(--base-color-neutral--white);
+  color: var(--base-color-hochstetler-brand--hlh-red);
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+/* FOR MOBILE */
+@media (max-width: 1080px) {
+  .grid-2-1 {
+    grid-template-columns: 1fr;
+    padding: 4rem 1rem;
+  }
+  .grid-4-1{
+    grid-template-columns: 1fr;
+  }
+}
