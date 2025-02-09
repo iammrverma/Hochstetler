@@ -36,6 +36,7 @@
   display: flex;
   align-items: center;
   margin-left: 1rem;
+  cursor: pointer;
 }
 
 .navbar-header,
@@ -67,7 +68,7 @@
 /* Menu Styles */
 .nav-list {
   list-style: none;
-  padding: 2rem 1rem;
+  padding: 2rem 0.5rem;
   flex-direction: column;
   overflow: auto;
   transition: all 0.3s ease;
@@ -87,16 +88,74 @@
   font-weight: normal;
   transition: color 0.3s;
   font-family: var(--font-family);
-  padding: 0.35rem;
+  /* padding: 0.35rem; */
   white-space: nowrap;
 }
 
 .nav-item.active a {
   font-weight: bold;
 }
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  text-align: left;
+}
+.dropdown-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.dropdown-toggle:focus {
+  outline: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%; /* Adjust for upward positioning */
+  border-radius: 0.5rem;
+
+  background-color: #fff;
+  list-style: none;
+  padding: 0.5rem 1rem;
+  width: min(350px, 100vw);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10;
+}
+.dropdown-item p {
+  text-wrap: auto;
+}
+.nav-list {
+  overflow: visible; /* Ensure no scrollbars are added */
+  /* padding: 0; Prevent extra space issues */
+}
+
+.navbar-container {
+  overflow: visible;
+  position: relative;
+}
+.dropdown-menu .dropdown-item a {
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-item.dropdown .dropdown-toggle.open + .dropdown-menu {
+  display: block;
+}
 /* FOR DESKTOP */
 @media (min-width: 1080px) {
-  .navbar{
+  .navbar {
     padding: 1rem;
   }
   .nav-list {
@@ -106,13 +165,13 @@
     padding: 0;
   }
 
-  .nav, .nav.open {
+  .nav,
+  .nav.open {
     display: block;
     height: min-content;
     width: auto;
     margin-inline: 1rem;
   }
- 
   .hamburgur {
     display: none;
   }
