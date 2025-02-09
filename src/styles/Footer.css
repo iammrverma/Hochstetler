@@ -1,0 +1,61 @@
+.footer {
+  padding: 4rem 2rem;
+  gap: 4rem 1rem;
+  max-width: 80rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 0.5fr;
+  align-items: start;
+}
+
+.footer-right {
+  display: grid;
+  gap: 2rem 3rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+  place-items: start;
+}
+.footer.background-green {
+  background-image: linear-gradient(#8b8d3c4a, #5c611e63 31%, #5056166b 39%);
+  position: relative;
+}
+.footer_logo {
+  min-width: 200px;
+  max-width: 200px;
+}
+.uui-footer02_link {
+  grid-column-gap: 0.5rem;
+  color: var(--base-color-neutral--white);
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: inter-variable, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: flex;
+}
+.footer-list-heading {
+  color: var(--base-color-hochstetler-brand--hlh-green-accent);
+  letter-spacing: 0;
+  font-family: quincy-cf, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+@media (max-width: 1080px) {
+  .footer {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-right {
+    display: none;
+  }
+}
