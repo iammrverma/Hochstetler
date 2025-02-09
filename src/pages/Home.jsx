@@ -5,6 +5,7 @@ import Hero2 from "../components/Hero2";
 import Hero3 from "../components/Hero3";
 import Footer from "../components/Footer";
 import NewsLetteCard from "../components/NewsLetteCard";
+import TestimonialPitch from "../components/TestimonialPitch";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Hero2 />
       <Hero3 />
       <Hero4 />
+      <TestimonialPitch />
       <NewsLetteCard />
       <Footer />
     </div>
