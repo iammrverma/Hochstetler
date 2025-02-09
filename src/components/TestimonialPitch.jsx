@@ -1,6 +1,7 @@
 import React from "react";
 import TestimonialCard from "./TestimonialCard";
 import { useWindowSize } from "../contexts/WindowSizeContext";
+import ButtonPrimary from "./buttons/ButtonPrimary";
 const testimonialData = [
   {
     rating: 5,
@@ -166,6 +167,7 @@ const TestimonialPitch = () => {
           />
         ))}
       </div>
+      <ButtonPrimary  text={"Read Our Testimonials"} to={"/resources/testimonials"}/>
     </div>
   );
 };
