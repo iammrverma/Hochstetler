@@ -183,6 +183,9 @@ button:focus-visible {
 .text-green {
   color: var(--base-color-hochstetler-brand--hlh-green);
 }
+.text-green-light {
+  color: var(--base-color-hochstetler-brand--hlh-green-light);
+}
 .text-red-accent {
   color: var(--base-color-hochstetler-brand--hlh-red);
 }
@@ -215,6 +218,13 @@ button:focus-visible {
   flex-direction: column;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.none {
+  display: none;
+}
 .min-h-full {
   min-height: 100vh;
 }

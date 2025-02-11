@@ -5,7 +5,7 @@ const TestimonialCard = ({ rating, message, location, name }) => {
     <div
       style={{
         padding: "2rem",
-        width: "320px",
+        minWidth: "320px",
         border: "1px solid var(--untitled-ui--gray50)",
         backgroundColor: "var(--base-color-hochstetler-brand--hlh-beige-light)",
         borderRadius: " 1rem",

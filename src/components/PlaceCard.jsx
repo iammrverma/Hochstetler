@@ -41,7 +41,7 @@ const PlaceCard = ({ src, title, location }) => {
         />
       </div>
 
-      <h3 style={{ textTransform: "capitalize" }}>{title}</h3>
+      <h4 style={{ textTransform: "capitalize" }}>{title}</h4>
       {location && (
         <div className="text-size-regular text-green-accent">{location}</div>
       )}

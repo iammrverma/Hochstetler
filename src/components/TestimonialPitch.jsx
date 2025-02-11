@@ -109,13 +109,14 @@ const testimonialData = [
     location: "Brooklyn, USA",
   },
 ];
-const Testimonials = ({ testimonials }) => {
+export const TestimonialList = ({ testimonials, styles }) => {
   return (
     <div
       className="flex-column"
       style={{
         gap: "2rem",
         alignItems: "flex-start",
+        ...styles,
       }}
     >
       {testimonials.map((testimonial, index) => (
@@ -160,14 +161,17 @@ const TestimonialPitch = () => {
         }}
       >
         {groupedTestimonials.map((group, groupIndex) => (
-          <Testimonials
+          <TestimonialList
             testimonials={group}
             groupIndex={groupIndex}
             key={groupIndex}
           />
         ))}
       </div>
-      <ButtonPrimary  text={"Read Our Testimonials"} to={"/resources/testimonials"}/>
+      <ButtonPrimary
+        text={"Read Our Testimonials"}
+        to={"/resources/testimonials"}
+      />
     </div>
   );
 };

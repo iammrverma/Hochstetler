@@ -1,6 +1,12 @@
 import React from "react";
 
-const Hero2 = () => {
+const Hero2 = ({
+  extended,
+  heading,
+  subheading,
+  smallheading,
+  description,
+}) => {
   return (
     <div
       className="hero2"
@@ -8,22 +14,25 @@ const Hero2 = () => {
         padding: "2rem 1rem",
       }}
     >
-      <div className="grid-2-1" style={{ gap: "1rem" }}>
+      <div className={`${extended ? "grid-2-1" : ""}`} style={{ gap: "1rem" }}>
         <div>
-          <h2 className="text-green">Inspired by nature.</h2>
-          <h2 className="text-green-accent">Built for modern life.</h2>
-        </div>
-        <div>
-          <h3 className="text-dark" style={{ paddingBottom: "1rem" }}>
-            The home you've dreamed of starts here.
-          </h3>
-          <div className="text-size-regular">
-            At Hochstetler, we've reimagined the log home experience to solve
-            the challenges of the past, ensuring every detail meets your
-            aspirations for beauty, comfort, and lasting value. Discover how you
-            can embrace tradition while experiencing the innovation and ease of
-            today's living.
+          {smallheading && (
+            <div className="text-green-light uppercase">{smallheading}</div>
+          )}
+          <div className={`${extended ? "" : "flex"}`}>
+            <h2 className="text-green">{heading?.main}</h2>
+            {!extended && <span>&nbsp;</span>}
+            <h2 className="text-green-accent">{heading?.span}</h2>
           </div>
+        </div>
+
+        <div>
+          {subheading && (
+            <h3 className={`text-dark `} style={{ paddingBottom: "1rem" }}>
+              {subheading}
+            </h3>
+          )}
+          <div className="text-size-regular">{description}</div>
         </div>
       </div>
     </div>
