@@ -14,11 +14,11 @@ const Header = ({
       style={{
         ...(backgroundImage && {
           backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover", // Adjusts the background image to cover the div
-          backgroundRepeat: "no-repeat", // Prevents repeating
-          backgroundPosition: "center", // Centers the image
+          backgroundSize: "cover", 
+          backgroundRepeat: "no-repeat", 
+          backgroundPosition: "center", 
         }),
-        ...styles, // Ensures any additional styles passed are applied
+        ...styles, 
       }}
     >
       {title ? <h1>{title}</h1> : children}

@@ -8,6 +8,7 @@ import NewsLetteCard from "../components/NewsLetteCard";
 import TestimonialPitch from "../components/TestimonialPitch";
 import FloorPlanPitch from "../components/FloorPlanPitch";
 import FaqPitch from "../components/FaqPitch";
+import RentalsPitch from "../components/RentalsPitch";
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
       <Hero4 />
       <FaqPitch />
       <TestimonialPitch />
+      <RentalsPitch />
       <FloorPlanPitch />
       <NewsLetteCard />
       <Footer />
