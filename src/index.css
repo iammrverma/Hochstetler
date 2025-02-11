@@ -371,6 +371,26 @@ button:focus-visible {
   box-shadow: 0 2px 12px 1px #0003;
   box-shadow: 0 2px 7px 2px #0003;
 }
+.q {
+  padding: 0.75rem 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--base-color-neutral--neutral-lighter);
+  border-radius: var(--radius--radius-med);
+  background-color: var(--base-color-neutral--white);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.q:hover {
+  background-color: var(--base-color-hochstetler-brand--hlh-green-light);
+  color: var(--base-color-neutral--white);
+}
+.fa-arrow-right{
+  transition: all .2s;
+}
+.q:hover .fa-arrow-right{
+  transform: translateX(1rem);
+}
 
 /* FOR MOBILE */
 @media (max-width: 1080px) {

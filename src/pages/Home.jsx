@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import NewsLetteCard from "../components/NewsLetteCard";
 import TestimonialPitch from "../components/TestimonialPitch";
 import FloorPlanPitch from "../components/FloorPlanPitch";
+import FaqPitch from "../components/FaqPitch";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
       />
       <Hero3 />
       <Hero4 />
+      <FaqPitch />
       <TestimonialPitch />
       <FloorPlanPitch />
       <NewsLetteCard />
