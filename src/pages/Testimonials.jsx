@@ -122,6 +122,7 @@ const Testimonials = () => {
           description={
             "Meet homeowners who have built their dream log homes with us."
           }
+          headingWrap
         />
       </Header>
       <h3 className={"text-green text-center"}>In their words</h3>

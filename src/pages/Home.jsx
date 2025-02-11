@@ -6,6 +6,7 @@ import Hero3 from "../components/Hero3";
 import Footer from "../components/Footer";
 import NewsLetteCard from "../components/NewsLetteCard";
 import TestimonialPitch from "../components/TestimonialPitch";
+import FloorPlanPitch from "../components/FloorPlanPitch";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
       <Hero3 />
       <Hero4 />
       <TestimonialPitch />
+      <FloorPlanPitch />
       <NewsLetteCard />
       <Footer />
     </div>
