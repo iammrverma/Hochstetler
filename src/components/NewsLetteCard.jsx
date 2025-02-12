@@ -4,11 +4,16 @@ import newsletterImg from "../assets/newsletter.jpg";
 const NewsLetteCard = () => {
   const [value, setValue] = useState("");
   return (
-    <div className="newsletterCard grid text-center">
+    <div className="newsletterCard grid-2-4-1 text-center">
       <div className="left">
         <img src={newsletterImg} alt="" />
       </div>
-      <div className="flex-column right">
+      <div
+        className="flex-column right"
+        style={{
+          backgroundColor: "var(--base-color-hochstetler-brand--hlh-beige-med)",
+        }}
+      >
         <h3 className="">
           Subscribe to <span className="text-red-accent">Log Home Life</span>
         </h3>

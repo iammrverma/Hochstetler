@@ -5,9 +5,12 @@ import VerticalList from "./VerticalList";
 import floorPlan1 from "../assets/floor-plan-1.jpg";
 import floorPlan2 from "../assets/floor-plan-2.jpg";
 import floorPlan3 from "../assets/floor-plan-3.jpg";
-import { FloorPlanCardMinimal } from "./FloorPlanCard";
+import FloorPlanCard, { FloorPlanCardMinimal } from "./FloorPlanCard";
+import { useWindowSize } from "../contexts/WindowSizeContext";
 
 const FloorPlanPitch = () => {
+  const { width } = useWindowSize();
+  const large = width > 1080;
   const firstListRef = useRef(null);
   const secondListRef = useRef(null);
 
@@ -56,7 +59,6 @@ const FloorPlanPitch = () => {
       style={{
         height: "150vh",
         overflow: "visible",
-        position: "relative",
       }}
       onWheel={handleScroll} // Listen to the scroll event on the parent container
     >
@@ -64,8 +66,7 @@ const FloorPlanPitch = () => {
         className="flex-column"
         style={{
           gap: "1rem",
-          position: "absolute",
-          maxWidth: "50%",
+
           padding: "6rem 3rem",
         }}
       >
@@ -78,13 +79,15 @@ const FloorPlanPitch = () => {
           Already have a floor plan? Bring us your ideas and our team of
           designers can help you make your custom log home a reality.
         </p>
-        <div>
-          <ButtonPrimary
-            text={"View Floor Plans"}
-            to={"/floor-plans"}
-            varient="green"
-          />
-        </div>
+        {large && (
+          <div>
+            <ButtonPrimary
+              text={"View Floor Plans"}
+              to={"/floor-plans"}
+              varient="green"
+            />
+          </div>
+        )}
       </div>
 
       <div
@@ -92,73 +95,114 @@ const FloorPlanPitch = () => {
           overflow: "hidden",
           height: "100%",
           display: "flex",
-          gap: "1rem",
-          // transform:"translateX(-50%)",
-          left: "50%",
-          position: "absolute",
+          gap: "2rem",
+          ...(!large && { flexDirection: "column" }),
         }}
       >
-        {/* First List */}
-        <div
-          className="no-scrollbar"
-          ref={firstListRef}
-          style={{
-            height: "100%",
-            overflowY: "auto",
-            flex: 1,
-            padding: "0.5rem",
-          }}
-        >
-          <VerticalList
-            list={[
-              { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-            ]}
-          >
-            {(data) => (
-              <FloorPlanCardMinimal
-                src={data.src}
-                to={data.to}
-                title={data.title}
-              />
-            )}
-          </VerticalList>
-        </div>
-        {/* Second List */}
-        <div
-          className="no-scrollbar"
-          ref={secondListRef}
-          style={{
-            height: "100%",
-            overflowY: "auto",
-            flex: 1,
-            padding: "0.5rem",
-          }}
-        >
-          <VerticalList
-            list={[
-              { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-              { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-            ]}
-            styles={{ paddingTop: "5rem" }}
-          >
-            {(data) => (
-              <FloorPlanCardMinimal
-                src={data.src}
-                to={data.to}
-                title={data.title}
-              />
-            )}
-          </VerticalList>
-        </div>
+        {large ? (
+          <>
+            <div
+              className="no-scrollbar"
+              ref={firstListRef}
+              style={{
+                height: "100%",
+                overflowY: "auto",
+                flex: 1,
+                padding: "0.5rem",
+              }}
+            >
+              <VerticalList
+                list={[
+                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
+                ]}
+              >
+                {(data) => (
+                  <FloorPlanCardMinimal
+                    src={data.src}
+                    to={data.to}
+                    title={data.title}
+                  />
+                )}
+              </VerticalList>
+            </div>
+
+            <div
+              className="no-scrollbar"
+              ref={secondListRef}
+              style={{
+                height: "100%",
+                overflowY: "auto",
+                flex: 1,
+                padding: "0.5rem",
+              }}
+            >
+              <VerticalList
+                list={[
+                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
+                ]}
+                styles={{ paddingTop: "5rem" }}
+              >
+                {(data) => (
+                  <FloorPlanCardMinimal
+                    src={data.src}
+                    to={data.to}
+                    title={data.title}
+                  />
+                )}
+              </VerticalList>
+            </div>
+          </>
+        ) : (
+          <>
+            <div
+              className="no-scrollbar"
+              ref={firstListRef}
+              style={{
+                height: "100%",
+                overflowY: "auto",
+                flex: 1,
+                padding: "0.5rem",
+              }}
+            >
+              <VerticalList
+                list={[
+                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
+                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
+                ]}
+              >
+                {(data) => (
+                  <FloorPlanCard
+                    src={data.src}
+                    to={data.to}
+                    title={data.title}
+                    bedrooms={5}
+                    bathrooms={3}
+                    name={"title"}
+                  />
+                )}
+              </VerticalList>
+            </div>
+            <ButtonPrimary
+              text={"View All Floor Plans"}
+              to={"/floor-plans"}
+              varient="green"
+            />
+          </>
+        )}
       </div>
     </div>
   );

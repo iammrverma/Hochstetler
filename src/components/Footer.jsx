@@ -21,7 +21,7 @@ const FooterNavlist = ({ heading, navlist }) => {
 const Footer = () => {
   const [value, setValue] = useState("");
   return (
-    <div className="min-h-full footer background-green">
+    <div className="footer background-green">
       <div className="footer-right">
         <div className="flex-column" style={{ gap: "2rem" }}>
           <FooterNavlist

@@ -144,7 +144,7 @@ const TestimonialPitch = () => {
   return (
     <div
       className="flex-column"
-      style={{ alignItems: "center", padding: "4rem 2rem" }}
+      style={{ alignItems: "center", padding: "4rem 2rem", gap:"2rem" }}
     >
       <div className="header text-center">
         <h2 className="text-green">Our Client Stories</h2>
