@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "./buttons/ButtonPrimary";
+import Bed from "./svgs/Bed";
+import Bathtub from "./svgs/Bathtub";
+import House from "./svgs/House";
 export const FloorPlanCardMinimal = ({ src, to, title }) => {
   const navigate = useNavigate();
   return (
@@ -48,19 +51,22 @@ const FloorPlanCard = ({ src, to, title, area, bedrooms, bathrooms }) => {
         <h4 className="text-green">{title}</h4>
         
           <div className="area flex-center" style={{ gap: ".5rem" }}>
-            <i className="fa-solid fa-house text-red-accent"></i>
+            {/* <i className="fa-solid fa-house text-red-accent"></i> */}
+            <House/>
             <div className="flex text-green" style={{ gap: ".5rem" }}>
               <div>{area}</div>Sq Ft
             </div>
           </div>
           <div className="bedrooms flex-center" style={{ gap: ".5rem" }}>
-            <i className="fa-solid fa-bed text-red-accent"></i>
+            {/* <i className="fa-solid fa-bed text-red-accent"></i> */}
+            <Bed/>
             <div className="flex text-green" style={{ gap: ".5rem" }}>
               <div>{bedrooms}</div> Bedrooms
             </div>
           </div>
           <div className="bathrooms flex-center" style={{ gap: ".5rem" }}>
-            <i className="fa-solid fa-sink text-red-accent"></i>
+            {/* <i className="fa-solid fa-sink text-red-accent"></i> */}
+            <Bathtub/>
             <div className="flex text-green" style={{ gap: ".5rem" }}>
               <div>{bathrooms}</div> Bathrooms
             </div>

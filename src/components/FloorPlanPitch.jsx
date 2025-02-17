@@ -189,6 +189,7 @@ const FloorPlanPitch = () => {
                     src={data.src}
                     to={data.to}
                     title={data.title}
+                    area={250}
                     bedrooms={5}
                     bathrooms={3}
                     name={"title"}
