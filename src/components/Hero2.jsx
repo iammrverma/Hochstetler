@@ -17,7 +17,10 @@ const Hero2 = ({
         ...style,
       }}
     >
-      <div className={`${extended ? "grid-2-1" : "grid"}`} style={{ gap: "1rem" }}>
+      <div
+        className={`${extended ? "grid-2-1" : "grid"}`}
+        style={{ gap: "1rem" }}
+      >
         <div>
           {smallheading && (
             <div className="text-green-light uppercase">{smallheading}</div>

@@ -225,6 +225,8 @@ button:focus-visible {
 .text-size-regular {
   font-family: inter-variable, sans-serif;
   font-size: 1rem;
+  color: var(--base-color-hochstetler-brand--hlh-dark);
+  
 }
 .text-size-medium {
   font-family: inter-variable, sans-serif;
