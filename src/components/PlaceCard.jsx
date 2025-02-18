@@ -9,7 +9,7 @@ const PlaceCard = ({ src, title, location }) => {
         boxShadow: hovered
           ? "0 0 20px 4px rgba(0,0,0,0.5)"
           : "0 0 0 0 rgba(0,0,0,0)",
-        borderRadius: "2rem",
+        borderRadius: "var(--radius--radius-small)",
         alignItems: "center",
         overflow: "hidden",
         transition: "all 1s ease",
