@@ -167,7 +167,7 @@ export const Navlist = ({ closeMenu, isOpen, wrap }) => {
             description: "See our speaciality timber builds",
           },
           {
-            to: "/abou  t-us/commercial-service",
+            to: "/about-us/commercials",
             label: "See our commercial timber build projects",
           },
         ]}

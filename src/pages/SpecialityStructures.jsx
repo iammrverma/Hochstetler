@@ -16,7 +16,9 @@ const SpecialityStructures = () => {
         className="container-large-2 flex-column"
         style={{ gap: "5rem", padding: "3rem 0" }}
       >
-        <h2 className="text-green">Post and Beam Perfection</h2>
+        <p className="text-green" style={{ fontSize: "1.8rem" }}>
+          Post and Beam Perfection
+        </p>
         <p>
           From horse barns to timber frame pavilions, our specialty timber
           structures combine expert design, premium materials, and timeless
