@@ -165,6 +165,35 @@ button {
   transition: border-color 0.25s;
 }
 
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none; /* Removes default styling */
+  border: 2px solid #3c7c43; /* Green border */
+  border-radius: 4px;
+  background-color: transparent; /* Transparent background */
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #3c7c43; /* Background when checked */
+  box-shadow: inset 0 0 1px 2px #3c7c43;
+}
+
+/* Optional: Add a checkmark using ::after */
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -325,7 +354,11 @@ button:focus-visible {
 .header {
   padding: 5rem;
 }
-
+.link {
+  color: var(--base-color-hochstetler-brand--hlh-green);
+  text-decoration: underline;
+  cursor: pointer;
+}
 .grid-2-4-1 {
   display: grid;
   grid-template-columns: 2fr 4fr;
@@ -385,10 +418,10 @@ button:focus-visible {
   background-color: var(--base-color-hochstetler-brand--hlh-green-light);
   color: var(--base-color-neutral--white);
 }
-.fa-arrow-right{
-  transition: all .2s;
+.fa-arrow-right {
+  transition: all 0.2s;
 }
-.q:hover .fa-arrow-right{
+.q:hover .fa-arrow-right {
   transform: translateX(1rem);
 }
 
