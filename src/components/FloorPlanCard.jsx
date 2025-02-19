@@ -50,22 +50,19 @@ const FloorPlanCard = ({ src, to, title, area, bedrooms, bathrooms }) => {
       >
         <h4 className="text-green">{title}</h4>
         
-          <div className="area flex-center" style={{ gap: ".5rem" }}>
-            {/* <i className="fa-solid fa-house text-red-accent"></i> */}
+          <div className="area flex-center text-red-accent" style={{ gap: ".5rem" }}>
             <House/>
             <div className="flex text-green" style={{ gap: ".5rem" }}>
               <div>{area}</div>Sq Ft
             </div>
           </div>
-          <div className="bedrooms flex-center" style={{ gap: ".5rem" }}>
-            {/* <i className="fa-solid fa-bed text-red-accent"></i> */}
+          <div className="bedrooms flex-center text-red-accent" style={{ gap: ".5rem" }}>
             <Bed/>
             <div className="flex text-green" style={{ gap: ".5rem" }}>
               <div>{bedrooms}</div> Bedrooms
             </div>
           </div>
-          <div className="bathrooms flex-center" style={{ gap: ".5rem" }}>
-            {/* <i className="fa-solid fa-sink text-red-accent"></i> */}
+          <div className="bathrooms flex-center text-red-accent" style={{ gap: ".5rem" }}>
             <Bathtub/>
             <div className="flex text-green" style={{ gap: ".5rem" }}>
               <div>{bathrooms}</div> Bathrooms
