@@ -200,8 +200,11 @@ const FloorPlans = () => {
             help make your vision a reality.
           </p>
         </div>
-        <div className="grid-2-4-1" style={{ gap: "2rem" }}>
-          <div>
+        <div
+          className="grid-2-4-1"
+          style={{ gap: "2rem", alignItems: "flex-start" }}
+        >
+          <div className="div" style={{ maxWidth: "100%" }}>
             <div
               className="filtersSection flex-column"
               style={{
