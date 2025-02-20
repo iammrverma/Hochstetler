@@ -199,6 +199,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+p {
+  max-width: 72ch;
+}
+
 .text-center {
   text-align: center;
 }
@@ -226,7 +230,6 @@ button:focus-visible {
   font-family: inter-variable, sans-serif;
   font-size: 1rem;
   color: var(--base-color-hochstetler-brand--hlh-dark);
-  
 }
 .text-size-medium {
   font-family: inter-variable, sans-serif;

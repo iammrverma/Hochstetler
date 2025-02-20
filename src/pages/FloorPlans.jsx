@@ -5,6 +5,7 @@ import floorPlan2 from "../assets/floor-plan-2.jpg";
 import floorPlan3 from "../assets/floor-plan-3.jpg";
 import Footer from "../components/Footer";
 import RangeInput from "../components/RangeInput";
+import SearchInput from "../components/SearchInput";
 const Filter = ({ title, onClear, children }) => {
   return (
     <div
@@ -223,45 +224,8 @@ const FloorPlans = () => {
                 </div>
                 <div className="reset link">Reset All</div>
               </div>
-              <div
-                className="inputBox flex"
-                style={{
-                  alignItems: "center",
-                  borderStyle: "solid",
-                  borderWidth: "1px 1px 3px",
-                  borderColor:
-                    "var(--base-color-neutral--neutral-lighter) var(--base-color-neutral--neutral-lighter) #dfdfdf",
-                  borderRadius: "var(--radius--radius-small)",
-                  minHeight: "3.5rem",
-                  marginBottom: "0",
-                  width: "100%",
-                  padding: "1rem 1.5rem ",
-                  backgroundColor: "var(--base-color-neutral--white)",
-                  outline: "none",
-                  fontSize: "1.125rem",
-                }}
-              >
-                <div className="text-green">
-                  <i
-                    class="fa-solid fa-magnifying-glass"
-                    style={{ cursor: "pointer" }}
-                  ></i>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search Here"
-                  style={{
-                    outline: "none",
-                    border: "none",
-                    backgroundColor: "inherit",
-                    flex: "1",
-                    color: "black",
-                    padding: ".5rem ",
-                  }}
-                />
-              </div>
+              <SearchInput title={"Search Here"} />
               <Filter title={"Square Footage"} onClear={() => setInputArea(0)}>
-                {/* <FilterRange min={500} max={5000} /> */}
                 <RangeInput min={500} max={5000} />
               </Filter>
               <Filter title={"Bedrooms"} onClear={() => setInputBed(0)}>
@@ -284,7 +248,7 @@ const FloorPlans = () => {
           <div
             className="no-scrollbar grid"
             style={{
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr)",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
               overflowY: "auto",
 
               gap: "2rem",

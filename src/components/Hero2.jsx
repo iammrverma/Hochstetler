@@ -38,7 +38,7 @@ const Hero2 = ({
               {subheading}
             </h3>
           )}
-          <div className="text-size-regular">{description}</div>
+          <p className="text-size-regular">{description}</p>
         </div>
       </div>
     </div>

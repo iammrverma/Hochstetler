@@ -5,6 +5,7 @@ import headerBg from "../assets/header-bg.png";
 import image from "../assets/testimonial-image.jpg";
 import { TestimonialList } from "../components/TestimonialPitch";
 import Footer from "../components/Footer";
+import { useWindowSize } from "../contexts/WindowSizeContext";
 const testimonialData = [
   {
     rating: 5,
@@ -113,6 +114,8 @@ const testimonialData = [
   },
 ];
 const Testimonials = () => {
+  const { width } = useWindowSize();
+  const large = width > 1080;
   return (
     <div>
       <Header backgroundImage={headerBg} image={image}>
@@ -122,7 +125,7 @@ const Testimonials = () => {
           description={
             "Meet homeowners who have built their dream log homes with us."
           }
-          headingWrap
+          headingWrap={large}
         />
       </Header>
       <h3 className={"text-green text-center"}>In their words</h3>
