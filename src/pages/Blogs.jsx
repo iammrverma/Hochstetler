@@ -4,7 +4,6 @@ import SearchInput from "../components/SearchInput";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/buttons/ButtonPrimary";
 import floorPlan1 from "../assets/floor-plan-1.jpg";
-import Footer from "../components/Footer";
 const BlogCard = ({ src, to, title, description }) => {
   const navigate = useNavigate();
   return (
@@ -137,7 +136,6 @@ const Blogs = () => {
           />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

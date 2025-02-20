@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
 import PlaceCard from "../components/PlaceCard";
-import Footer from "../components/Footer";
 
 import hero1img from "../assets/hero1.webp";
 import hero2img from "../assets/hero2.jpg";
@@ -53,7 +52,6 @@ const Commercials = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

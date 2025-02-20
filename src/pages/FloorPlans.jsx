@@ -3,7 +3,6 @@ import FloorPlanCard from "../components/FloorPlanCard";
 import floorPlan1 from "../assets/floor-plan-1.jpg";
 import floorPlan2 from "../assets/floor-plan-2.jpg";
 import floorPlan3 from "../assets/floor-plan-3.jpg";
-import Footer from "../components/Footer";
 import RangeInput from "../components/RangeInput";
 import SearchInput from "../components/SearchInput";
 const Filter = ({ title, onClear, children }) => {
@@ -268,7 +267,6 @@ const FloorPlans = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

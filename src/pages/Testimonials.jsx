@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import headerBg from "../assets/header-bg.png";
 import image from "../assets/testimonial-image.jpg";
 import { TestimonialList } from "../components/TestimonialPitch";
-import Footer from "../components/Footer";
 import { useWindowSize } from "../contexts/WindowSizeContext";
 const testimonialData = [
   {
@@ -141,8 +140,6 @@ const Testimonials = () => {
           styles={{ marginInline: "auto", width: "50rem" }}
         />
       </div>
-
-      <Footer />
     </div>
   );
 };

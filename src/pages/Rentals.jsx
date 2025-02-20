@@ -5,7 +5,6 @@ import headerBg from "../assets/header-bg.png";
 import { useWindowSize } from "../contexts/WindowSizeContext";
 import image from "../assets/testimonial-image.jpg";
 import ButtonPrimary from "../components/buttons/ButtonPrimary";
-import Footer from "../components/Footer";
 const RentalsCard = ({
   src,
   title,
@@ -216,7 +215,6 @@ const Rentals = () => {
           large={large}
         />
       </div>
-      <Footer />
     </div>
   );
 };

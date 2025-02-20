@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import PlaceCard from "../components/PlaceCard";
 import hero1img from "../assets/hero1.webp";
 import hero2img from "../assets/hero2.jpg";
-import Footer from "../components/Footer";
 
 const SpecialityStructures = () => {
   return (
@@ -39,7 +38,6 @@ const SpecialityStructures = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

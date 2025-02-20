@@ -3,7 +3,6 @@ import Hero1 from "../components/Hero1";
 import Hero4 from "../components/Hero4";
 import Hero2 from "../components/Hero2";
 import Hero3 from "../components/Hero3";
-import Footer from "../components/Footer";
 import NewsLetteCard from "../components/NewsLetteCard";
 import TestimonialPitch from "../components/TestimonialPitch";
 import FloorPlanPitch from "../components/FloorPlanPitch";
@@ -32,7 +31,6 @@ const Home = () => {
       <RentalsPitch />
       <FloorPlanPitch />
       <NewsLetteCard />
-      <Footer />
     </div>
   );
 };

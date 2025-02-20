@@ -27,6 +27,7 @@ import LogCabinDays from "./pages/LogCabinDays";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import { WindowSizeProvider } from "./contexts/WindowSizeContext";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -56,6 +57,7 @@ const App = () => {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </WindowSizeProvider>
     </HashRouter>
   );

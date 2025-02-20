@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import Cluster from "../components/Cluster";
 import headerBg from "../assets/header-bg.png";
 import { useWindowSize } from "../contexts/WindowSizeContext";
-import Footer from "../components/Footer";
 import PlaceCard from "../components/PlaceCard";
 
 import hero2img from "../assets/hero2.jpg";
@@ -97,7 +96,6 @@ const ProjectGallery = () => {
           card3={{ src: hero1img, title: "title", location: "location" }}
         />
       </div>
-      <Footer />
     </div>
   );
 };

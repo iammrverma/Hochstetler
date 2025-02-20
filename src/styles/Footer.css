@@ -1,7 +1,7 @@
 .footer {
   padding: 4rem 2rem;
   gap: 4rem 1rem;
-  max-width: 80rem;
+  /* max-width: 80rem; */
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr 0.5fr;
