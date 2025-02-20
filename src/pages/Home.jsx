@@ -11,7 +11,7 @@ import RentalsPitch from "../components/RentalsPitch";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Hero1 />
       <Hero2
         extended
@@ -31,7 +31,7 @@ const Home = () => {
       <RentalsPitch />
       <FloorPlanPitch />
       <NewsLetteCard />
-    </div>
+    </>
   );
 };
 
