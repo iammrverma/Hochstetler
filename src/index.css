@@ -429,7 +429,12 @@ p {
 .q:hover .fa-arrow-right {
   transform: translateX(1rem);
 }
-
+.top-bar *{
+  color: var(--base-color-neutral--white);
+}
+.top-bar *:hover{
+  color: var(--base-color-hochstetler-brand--hlh-green-accent);
+}
 /* FOR MOBILE */
 @media (max-width: 1080px) {
   .grid-2-1 {

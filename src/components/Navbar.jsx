@@ -12,6 +12,8 @@ import VideoSvg from "../components/svgs/VideoSvg";
 import Bed from "./svgs/Bed";
 import logo from "../assets/logo.png";
 import { useWindowSize } from "../contexts/WindowSizeContext";
+import { Top } from "./Ribon";
+
 const NavLink = ({ to, label, closeMenu }) => {
   const location = useLocation();
   const isActive = location.pathname === to; // Check if the route is active
@@ -246,6 +248,7 @@ const NavBar = () => {
 
   return (
     <div className="nav-container">
+    <Top m_no={"XXXXXXXXXX"}/>
       <nav className="navbar">
         <h1 className="navbar-brand" onClick={() => navigate("/")}>
           <img src={logo} alt="" />

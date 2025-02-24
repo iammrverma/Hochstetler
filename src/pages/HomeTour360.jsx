@@ -8,8 +8,6 @@ import PlaceCard from "../components/PlaceCard";
 import hero1img from "../assets/hero1.webp";
 import hero2img from "../assets/hero2.jpg";
 
-import homeTour from "../assets/home-tour-gif.jpeg";
-
 const HomeTour360 = () => {
   return (
     <div>

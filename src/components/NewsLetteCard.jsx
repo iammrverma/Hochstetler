@@ -4,7 +4,7 @@ import newsletterImg from "../assets/newsletter.jpg";
 const NewsLetteCard = () => {
   const [value, setValue] = useState("");
   return (
-    <div className="newsletterCard grid-2-4-1 text-center">
+    <div className="newsletterCard grid-2-4-1 text-center" id="newsletterCard">
       <div className="left">
         <img src={newsletterImg} alt="" />
       </div>

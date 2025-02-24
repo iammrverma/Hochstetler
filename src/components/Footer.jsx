@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/Footer.css";
 import footerLogo from "../assets/footerImg.png";
 import NewsLetterInput from "./NewsLetterInput";
+import { Bottom } from "./Ribon.jsx";
 
 const FooterNavlist = ({ heading, navlist }) => {
   return (
@@ -21,7 +22,9 @@ const FooterNavlist = ({ heading, navlist }) => {
 const Footer = () => {
   const [value, setValue] = useState("");
   return (
-    <div className="footer background-green">
+    <>
+
+    <div className="footer background-green" >
       <div className="footer-right">
         <div className="flex-column" style={{ gap: "2rem" }}>
           <FooterNavlist
@@ -151,7 +154,10 @@ const Footer = () => {
 
         <NewsLetterInput value={value} setValue={setValue} />
       </div>
+      
     </div>
+    <Bottom/>
+    </>
   );
 };
 
