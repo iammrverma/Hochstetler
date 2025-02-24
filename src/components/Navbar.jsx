@@ -114,7 +114,7 @@ const DropdownNav = ({
         onClick={toggleDropdown}
         aria-expanded={isDropdownOpen}
       >
-        <div>
+        <div className="flex-center" style={{gap:".25rem"}}>
           {label}
           <i
             className={`fa ${

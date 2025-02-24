@@ -12,6 +12,10 @@
   padding-top: 1rem;
 }
 
+.navbar i{
+  color: var(--base-color-hochstetler-brand--hlh-red);
+}
+
 .nav {
   width: 100%;
   display: none;
