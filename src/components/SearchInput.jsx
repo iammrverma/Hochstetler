@@ -23,7 +23,7 @@ const SearchInput = ({ styles, title }) => {
     >
       <div className="text-green">
         <i
-          class="fa-solid fa-magnifying-glass"
+          className="fa-solid fa-magnifying-glass"
           style={{ cursor: "pointer" }}
         ></i>
       </div>

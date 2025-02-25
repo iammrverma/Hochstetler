@@ -28,35 +28,52 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import { WindowSizeProvider } from "./contexts/WindowSizeContext";
 import Footer from "./components/Footer";
+import FloorPlanDetail from "./pages/FloorPlanDetail";
+import ExtendedProjectGalery from "./pages/ExtendedProjectGalery";
+import BlogDetail from "./pages/BlogDetail";
+import { FloorPlanProvider } from "./contexts/FloorPlanContext";
 
 const App = () => {
   return (
     <HashRouter>
       <WindowSizeProvider>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/floor-plans" element={<FloorPlans />} />
+        <FloorPlanProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/floor-plans" element={<FloorPlans />} />
+            <Route path="/floor-plans/:name" element={<FloorPlanDetail />} />
 
-          <Route path="/gallery/project-gallery" element={<ProjectGallery />} />
-          <Route path="/gallery/home-tour-360" element={<HomeTour360 />} />
+            <Route
+              path="/gallery/project-gallery"
+              element={<ProjectGallery />}
+            />
+            <Route
+              path="/gallery/project-gallery/:name"
+              element={<ExtendedProjectGalery />}
+            />
 
-          <Route path="/resources/blogs" element={<Blogs />} />
-          <Route path="/resources/testimonials" element={<Testimonials />} />
-          <Route path="/resources/faqs" element={<FAQs />} />
+            <Route path="/gallery/home-tour-360" element={<HomeTour360 />} />
 
-          <Route path="/about-us/difference" element={<Difference />} />
-          <Route path="/about-us/rentals" element={<Rentals />} />
-          <Route
-            path="/about-us/speciality-structures"
-            element={<SpecialityStructures />}
-          />
-          <Route path="/about-us/commercials" element={<Commercials />} />
+            <Route path="/resources/blogs" element={<Blogs />} />
+            <Route path="/resources/blogs/:name" element={<BlogDetail />} />
 
-          <Route path="/log-cabin-days" element={<LogCabinDays />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+            <Route path="/resources/testimonials" element={<Testimonials />} />
+            <Route path="/resources/faqs" element={<FAQs />} />
+
+            <Route path="/about-us/difference" element={<Difference />} />
+            <Route path="/about-us/rentals" element={<Rentals />} />
+            <Route
+              path="/about-us/speciality-structures"
+              element={<SpecialityStructures />}
+            />
+            <Route path="/about-us/commercials" element={<Commercials />} />
+
+            <Route path="/log-cabin-days" element={<LogCabinDays />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </FloorPlanProvider>
         <Footer id="footer" />
       </WindowSizeProvider>
     </HashRouter>

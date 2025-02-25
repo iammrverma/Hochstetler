@@ -7,7 +7,7 @@ import floorPlan2 from "../assets/floor-plan-2.jpg";
 import floorPlan3 from "../assets/floor-plan-3.jpg";
 import FloorPlanCard, { FloorPlanCardMinimal } from "./FloorPlanCard";
 import { useWindowSize } from "../contexts/WindowSizeContext";
-
+import { floorPlans } from "../../public/data";
 const FloorPlanPitch = () => {
   const { width } = useWindowSize();
   const large = width > 1080;
@@ -57,7 +57,7 @@ const FloorPlanPitch = () => {
     <div
       className="grid-2-1 background-beige-light"
       style={{
-        height: "150vh",
+        height: large ? "150vh" : "auto",
         overflow: "visible",
       }}
       onWheel={handleScroll} // Listen to the scroll event on the parent container
@@ -168,31 +168,21 @@ const FloorPlanPitch = () => {
               className="no-scrollbar"
               ref={firstListRef}
               style={{
-                height: "100%",
                 overflowY: "auto",
                 flex: 1,
                 padding: "0.5rem",
               }}
             >
-              <VerticalList
-                list={[
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                ]}
-              >
+              <VerticalList list={floorPlans.slice(0, 5)}>
                 {(data) => (
                   <FloorPlanCard
-                    src={data.src}
-                    to={data.to}
-                    title={data.title}
-                    area={250}
-                    bedrooms={5}
-                    bathrooms={3}
-                    name={"title"}
+                    plan={{
+                      ...data,
+                      area: 250,
+                      bedrooms: 2,
+                      bathrooms: 3,
+                      title: "title",
+                    }}
                   />
                 )}
               </VerticalList>

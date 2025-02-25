@@ -46,10 +46,13 @@ const FaqPitch = () => {
           <ButtonPrimary text={"See our FAQ"} />
         </div>
       </div>
-      <div className="flex-center" style={{ width: `${large?"80%":"100%"}`, margin:"0 auto" }}>
+      <div
+        className="flex-center"
+        style={{ width: `${large ? "80%" : "100%"}`, margin: "0 auto" }}
+      >
         <div className="flex-column" style={{ gap: "2rem", width: "100%" }}>
-          {questions.map((q) => (
-            <Question q={q.q} to={q.to} key={q} />
+          {questions.map((q, ind) => (
+            <Question q={q.q} to={q.to} key={ind} />
           ))}
         </div>
       </div>

@@ -26,9 +26,9 @@ const Hero2 = ({
             <div className="text-green-light uppercase">{smallheading}</div>
           )}
           <div className={`${headingWrap ? "flex" : ""}`}>
-            <h2 className="text-green">{heading?.main}</h2>
+            <h3 className="text-green">{heading?.main}</h3>
             {!extended && <span>&nbsp;</span>}
-            <h2 className="text-green-accent">{heading?.span}</h2>
+            <h3 className="text-green-accent">{heading?.span}</h3>
           </div>
         </div>
 

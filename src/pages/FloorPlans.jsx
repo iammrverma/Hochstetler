@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import FloorPlanCard from "../components/FloorPlanCard";
-import floorPlan1 from "../assets/floor-plan-1.jpg";
-import floorPlan2 from "../assets/floor-plan-2.jpg";
-import floorPlan3 from "../assets/floor-plan-3.jpg";
 import RangeInput from "../components/RangeInput";
 import SearchInput from "../components/SearchInput";
+import { useFloorPlans } from "../contexts/FloorPlanContext";
+
 const Filter = ({ title, onClear, children }) => {
   return (
     <div
@@ -33,144 +32,8 @@ const FilterCheckbox = ({ value, lable }) => {
 };
 
 const FloorPlans = () => {
-  const floorPlans = [
-    {
-      src: floorPlan1,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan2,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan3,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan1,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan2,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan3,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan1,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan2,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan3,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan1,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan2,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan3,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan1,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan2,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-    {
-      src: floorPlan3,
-      to: "#",
-      title: "Eagle Point Log Home",
-      area: "230",
-      bedrooms: "3",
-      bathrooms: "2",
-      name: "title",
-    },
-  ]; //TODO lift the state up
-  const totalFloorPlans = 67;
+  const { floorPlans } = useFloorPlans();
+  const totalFloorPlans = floorPlans.length;
   const visibleFloorPlans = totalFloorPlans;
 
   const [inputArea, setInputArea] = useState(null);
@@ -249,20 +112,11 @@ const FloorPlans = () => {
             style={{
               gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
               overflowY: "auto",
-
               gap: "2rem",
             }}
           >
-            {floorPlans.map((data) => (
-              <FloorPlanCard
-                src={data.src}
-                to={data.to}
-                title={data.title}
-                area={data.area}
-                bedrooms={data.bedrooms}
-                bathrooms={data.bathrooms}
-                name={data.name}
-              />
+            {floorPlans.map((plan, index) => (
+              <FloorPlanCard plan={plan} key={index} />
             ))}
           </div>
         </div>

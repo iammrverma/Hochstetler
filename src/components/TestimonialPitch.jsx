@@ -136,7 +136,7 @@ const TestimonialPitch = () => {
   const groupedTestimonials = [];
   const test_columns = Math.floor(width / 320);
   const listNum = Math.ceil(testimonialData.length / test_columns); // Calculate items per column
-  console.log(listNum);
+
   for (let i = 0; i < testimonialData.length; i += listNum) {
     groupedTestimonials.push(testimonialData.slice(i, i + listNum)); // Slice array into groups
   }
@@ -144,7 +144,7 @@ const TestimonialPitch = () => {
   return (
     <div
       className="flex-column"
-      style={{ alignItems: "center", padding: "4rem 2rem", gap:"2rem" }}
+      style={{ alignItems: "center", padding: "4rem 2rem", gap: "2rem" }}
     >
       <div className="header text-center">
         <h2 className="text-green">Our Client Stories</h2>

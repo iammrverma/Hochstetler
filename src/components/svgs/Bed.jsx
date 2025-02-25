@@ -1,11 +1,11 @@
 import React from "react";
 
-const Bed = ({color}) => {
+const Bed = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
-      height="auto"
+      height="32"
       viewBox="0 0 39 39"
       fill="none"
     >

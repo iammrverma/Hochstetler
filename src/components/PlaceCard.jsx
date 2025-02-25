@@ -1,9 +1,11 @@
 import { useState } from "react";
-const PlaceCard = ({ src, title, location }) => {
+import { useNavigate } from "react-router-dom";
+const PlaceCard = ({ src, title, location, to }) => {
   const [hovered, setHovered] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <div
+      onClick={() => navigate(to)}
       className="flex-column "
       style={{
         boxShadow: hovered

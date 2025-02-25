@@ -225,7 +225,12 @@ p {
 .text-green-accent {
   color: var(--base-color-hochstetler-brand--hlh-green-accent);
 }
-
+.text-neutral-light {
+  color: var(--base-color-neutral--neutral-light);
+}
+.text-size-large{
+  font-size: 2rem;
+}
 .text-size-regular {
   font-family: inter-variable, sans-serif;
   font-size: 1rem;
@@ -429,10 +434,10 @@ p {
 .q:hover .fa-arrow-right {
   transform: translateX(1rem);
 }
-.top-bar *{
+.top-bar * {
   color: var(--base-color-neutral--white);
 }
-.top-bar *:hover{
+.top-bar *:hover {
   color: var(--base-color-hochstetler-brand--hlh-green-accent);
 }
 /* FOR MOBILE */
