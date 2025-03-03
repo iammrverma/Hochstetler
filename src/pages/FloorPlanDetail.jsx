@@ -10,18 +10,8 @@ import Hero2 from "../components/Hero2";
 import PlaceCard from "../components/PlaceCard";
 import LogHouse from "../components/svgs/LogHouse";
 import PDF from "../components/svgs/PDF";
-import NewsLetterInput from "../components/NewsLetterInput";
+import { scrollTo } from "../util";
 import Input from "../components/Input";
-
-const scrollTo = (id) => {
-  const element = document.getElementById(id);
-  if (element) {
-    window.scrollTo({
-      top: element.offsetTop,
-      behavior: "smooth",
-    });
-  }
-};
 
 const Card = ({ icon: Icon, title, paras, to, text }) => {
   return (
