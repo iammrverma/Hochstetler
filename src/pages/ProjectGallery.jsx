@@ -1,6 +1,7 @@
 import React from "react";
 import Hero2 from "../components/Hero2";
 import Header from "../components/Header";
+import FloorPlanPitch from "../components/FloorPlanPitch";
 import Cluster from "../components/Cluster";
 import headerBg from "../assets/header-bg.png";
 import { useWindowSize } from "../contexts/WindowSizeContext";
@@ -96,6 +97,7 @@ const ProjectGallery = () => {
           card3={{ src: hero1img, title: "title", location: "location" }}
         />
       </div>
+      <FloorPlanPitch />
     </div>
   );
 };
