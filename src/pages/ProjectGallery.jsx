@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Cluster from "../components/Cluster";
 import headerBg from "../assets/header-bg.png";
 import { useWindowSize } from "../contexts/WindowSizeContext";
-import PlaceCard from "../components/PlaceCard";
+import ProjectGalleryCard from "../components/ProjectGalleryCard";
 
 import hero2img from "../assets/hero2.jpg";
 import hero1img from "../assets/hero1.webp";
@@ -15,19 +15,19 @@ const ProjectGalleryRow = ({ card1, card2, card3, large }) => {
       className="grid"
       style={{ gridTemplateColumns: `repeat(${repeat}, 1fr)`, gap: "1rem" }}
     >
-      <PlaceCard
+      <ProjectGalleryCard
         src={card1.src}
         title={card1.title}
         location={card1.location}
       />
-      <PlaceCard
+      <ProjectGalleryCard
         src={card2.src}
         title={card2.title}
         location={card2.location}
       />
 
       {large && (
-        <PlaceCard
+        <ProjectGalleryCard
           src={card3.src}
           title={card3.title}
           location={card3.location}

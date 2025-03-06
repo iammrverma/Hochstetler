@@ -7,7 +7,7 @@ import Bed from "../components/svgs/Bed";
 import Bathtub from "../components/svgs/Bathtub";
 import ButtonPrimary from "../components/buttons/ButtonPrimary";
 import Hero2 from "../components/Hero2";
-import PlaceCard from "../components/PlaceCard";
+import ProjectGalleryCard from "../components/ProjectGalleryCard";
 import LogHouse from "../components/svgs/LogHouse";
 import PDF from "../components/svgs/PDF";
 import { scrollTo } from "../util";
@@ -145,7 +145,7 @@ const Suggestions = ({ suggestions, title, src, to }) => {
         style={{ gridTemplateColumns: "1fr 1fr", gap: "2rem" }}
       >
         {suggestions.map((s, index) => (
-          <PlaceCard src={src} title={s} key={index} to={to} />
+          <ProjectGalleryCard src={src} title={s} key={index} to={to} />
         ))}
       </div>
     </>

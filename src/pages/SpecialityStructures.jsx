@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
-import PlaceCard from "../components/PlaceCard";
+import ProjectGalleryCard from "../components/ProjectGalleryCard";
 import hero1img from "../assets/hero1.webp";
 import hero2img from "../assets/hero2.jpg";
 
@@ -33,8 +33,8 @@ const SpecialityStructures = () => {
               gap: "3rem",
             }}
           >
-            <PlaceCard src={hero1img} title={"title"} />
-            <PlaceCard src={hero2img} title={"title"} />
+            <ProjectGalleryCard src={hero1img} title={"title"} />
+            <ProjectGalleryCard src={hero2img} title={"title"} />
           </div>
         </div>
       </div>

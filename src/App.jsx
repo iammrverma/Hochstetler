@@ -19,6 +19,7 @@ import Testimonials from "./pages/Testimonials";
 import FAQs from "./pages/FAQs";
 
 import Difference from "./pages/Difference";
+// import Rentals from "./pages/Rentals";
 import Rentals from "./pages/Rentals";
 import SpecialityStructures from "./pages/SpecialityStructures";
 import Commercials from "./pages/Commercials";

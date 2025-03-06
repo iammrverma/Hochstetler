@@ -18,7 +18,6 @@ const Hero4 = ({ heading, description }) => {
           justifyContent: "flex-start",
           padding: "5rem 4rem",
           minWidth: "50%",
-          border: "2px solid pink",
         }}
       >
         <img
