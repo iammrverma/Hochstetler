@@ -203,6 +203,21 @@ p {
   max-width: 72ch;
 }
 
+.heading-style-h4 {
+  color: var(--base-color-hochstetler-brand--hlh-dark);
+  letter-spacing: 0;
+  font-family: quincy-cf,sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+.heading-style-displayh1 {
+  font-family: var(--quincy-cf);
+  letter-spacing: -.04em;
+  font-size: 5rem;
+  font-weight: 500;
+  line-height: .9;
+}
 .text-center {
   text-align: center;
 }

@@ -24,9 +24,10 @@ const Hero1 = () => {
         }}
       >
         <h1 className="text-white">Log Home Living At Its Finest</h1>
-        <p className="text-white">
+        <p className="text-white heading-style-h4">
           Amerish classic log home for rich and woody Aesthetic
         </p>
+        <p></p>
         <ButtonPrimary text={"View Log Home Floor Plans"} />
       </div>
     </div>

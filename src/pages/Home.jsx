@@ -16,8 +16,8 @@ const Home = () => {
       <Hero2
         extended
         heading={{
-          main: "Inspired by nature.",
-          span: "Built for modern life.",
+          main: "A log home package",
+          span: "that delivers more.",
         }}
         subheading={"The home you've dreamed of starts here."}
         description={
@@ -25,7 +25,7 @@ const Home = () => {
         }
       />
       <Hero3 />
-      <Hero4 />
+      <Hero4 heading={{main:"Details that make", span:"the difference"}} description={"With complete material packages, expert design support, and essential details others often skip, we offer a better building experience. That means no surprise costs, efficient construction, and a home you'll value for life."}/>
       <FaqPitch />
       <TestimonialPitch />
       <RentalsPitch />
