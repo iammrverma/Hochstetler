@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const PlaceCard = ({ src, title, location, to }) => {
+const ProjectGalleryCard = ({ src, title, location, to }) => {
   const [hovered, setHovered] = useState(false);
   const navigate = useNavigate();
   return (
@@ -43,12 +43,12 @@ const PlaceCard = ({ src, title, location, to }) => {
         />
       </div>
 
-      <h4 style={{ textTransform: "capitalize" }}>{title}</h4>
+      <h4 className="heading-style-h4" style={{ textTransform: "capitalize" }}>{title}</h4>
       {location && (
-        <div className="text-size-regular text-green-accent">{location}</div>
+        <div className="text-green-accent green-kicker ">"Fra"</div>
       )}
     </div>
   );
 };
 
-export default PlaceCard;
+export default ProjectGalleryCard;
