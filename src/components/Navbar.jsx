@@ -32,7 +32,88 @@ const NavLink = ({ to, label, closeMenu }) => {
     </li>
   );
 };
+const dropdownOptions = {
+  gallery: [
+    {
+      to: "/gallery/project-gallery",
+      label: "Project Gallery",
+      description: "Be Inspired by the wonderous spaces our clients call home",
+      src: ImageSvg,
+    },
+    {
+      to: "/gallery/home-tour-360",
+      label: "Home Tour 360",
+      description: "Get an up-close tour of our most impressive homes",
+      src: VideoSvg,
+    },
+  ],
+  resources: [
+    {
+      to: "/resources/blogs",
+      label: "Blogs",
+      description: "Articles for homeowners by log home experts",
+      src: BookSvg,
+    },
+    {
+      to: "/resources/testimonials",
+      label: "Testimonials",
+      description: "Meet homeowners who built their dream homes",
+      src: StarSvg,
+    },
+    {
+      to: "/resources/faqs",
+      label: "FAQs",
+      description: "Get answers to your questions",
+      src: FAQSvg,
+    },
+  ],
+  aboutUs: [
+    {
+      to: "/about-us/rentals",
+      label: "Rentals",
+      description: "Experience a Hochstetler log home",
+      src: Bed,
+    },
+    {
+      to: "/about-us/speciality-structures",
+      label: "Speciality Structures",
+      description: "See our specialty timber builds",
+      src: StructureSvg,
+    },
+    {
+      to: "/about-us/commercials",
+      label: "Commercial Structures",
+      description: "Explore commercial timber projects",
+      src: TruckSvg,
+    },
+  ],
+};
+const DropdownItem = ({ option, closeMenu, liClassName }) => {
+  const location = useLocation();
+  const isActive = location.pathname === option.to;
+  const Icon = option.src;
 
+  return (
+    <li className={`${liClassName} ${isActive ? "active" : ""}`}>
+      <Link to={option.to} onClick={closeMenu} className="dropdown-link">
+        <div className="flex" style={{ gap: "1rem", padding: ".5rem" }}>
+          {Icon && (
+            <div
+              className="dropdown-icon text-green-light"
+              style={{ width: "1.5rem", height: "1.5rem" }}
+            >
+              <Icon className="dropdown-icon" />
+            </div>
+          )}
+          <div>
+            <h5 className="dropdown-label">{option.label}</h5>
+            <p className="dropdown-description">{option.description}</p>
+          </div>
+        </div>
+      </Link>
+    </li>
+  );
+};
 const DropdownNav = ({
   label,
   options,
@@ -45,10 +126,9 @@ const DropdownNav = ({
   const { width } = useWindowSize();
   const isDropdownOpen = activeDropdown === id;
   const dropdownRef = useRef(null);
-  const toggleDropdown = () => {
-    setTimeout(() => {
-      setActiveDropdown(isDropdownOpen ? null : id);
-    }, 100);
+
+  const handleMouseEnter = () => {
+    setActiveDropdown(id);
   };
   // Function to close dropdown when clicking outside
   useEffect(() => {
@@ -57,64 +137,23 @@ const DropdownNav = ({
         setActiveDropdown(null);
       }
     };
-  
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [isDropdownOpen]);
 
-  const mapOptions = (options, liClassName) =>
-    options.map((option) => {
-      const isActive = location.pathname === option.to;
-      const Icon = option.src;
-
-      return (
-        <li
-          key={option.to}
-          className={`${liClassName} ${isActive ? "active" : ""}`}
-        >
-          <Link
-            to={option.to}
-            onClick={() => {
-              closeMenu();
-              setActiveDropdown(null)
-            }}
-            className="dropdown-link "
-          >
-            <div
-              className="flex"
-              style={{
-                gap: "1rem",
-                padding: ".5rem",
-              }}
-            >
-              {Icon && (
-                <div
-                  className="text-green-light"
-                  style={{ width: "1.5rem", height: "1.5rem" }}
-                >
-                  <Icon className="dropdown-icon" />
-                </div>
-              )}
-              <div style={{ color: "black" }}>
-                <h5 className="dropdown-label">{option.label}</h5>
-                <p className="dropdown-description">{option.description}</p>
-              </div>
-            </div>
-          </Link>
-        </li>
-      );
-    });
-
   return (
-    <div ref={dropdownRef} className="dropdown=container">
+    <div
+      ref={dropdownRef}
+      className="dropdown=container"
+      onMouseEnter={handleMouseEnter}
+    >
       <button
         className={`dropdown-toggle ${isDropdownOpen ? "open" : ""}`}
-        onClick={toggleDropdown}
         aria-expanded={isDropdownOpen}
       >
-        <div className="flex-center" style={{gap:".25rem"}}>
+        <div className="flex-center" style={{ gap: ".25rem" }}>
           {label}
           <i
             className={`fa ${
@@ -122,43 +161,45 @@ const DropdownNav = ({
             } dropdown-icon`}
           ></i>
         </div>
-        {isDropdownOpen &&
-          (width >= 1080 ? (
-            <ul className="dropdown-menu">
-              {mapOptions(options, "dropdown-item")}
-            </ul>
-          ) : (
-            <>{mapOptions(options, "nav-item")}</>
-          ))}
       </button>
+
+      {isDropdownOpen &&
+        (width >= 1080 ? (
+          <ul className="dropdown-menu">
+            {options.map((option) => (
+              <DropdownItem
+                key={option.to}
+                option={option}
+                closeMenu={closeMenu}
+                liClassName={"dropdown-item"}
+              />
+            ))}
+          </ul>
+        ) : (
+          <>
+            {options.map((option) => (
+              <DropdownItem
+                key={option.to}
+                option={option}
+                closeMenu={closeMenu}
+                liClassName={"nav-item"}
+              />
+            ))}
+          </>
+        ))}
     </div>
   );
 };
 
-export const Navlist = ({ closeMenu, isOpen, wrap }) => {
-  const [activeDropdown, setActiveDropdown] = useState(null); // Track active dropdown
+export const NavList = ({ closeMenu, isOpen }) => {
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   return (
-    <ul className={`nav-list ${isOpen ? "open" : ""} ${wrap ? "wrap" : ""}`}>
+    <ul className={`nav-list ${isOpen ? "open" : ""}`}>
       <NavLink to="/floor-plans" label="Floor Plans" closeMenu={closeMenu} />
       <DropdownNav
         label="Gallery"
-        options={[
-          {
-            to: "/gallery/project-gallery",
-            label: "Project Gallery",
-            description:
-              "Be Inspired by the wonderous spaces that our client call home",
-            src: ImageSvg,
-          },
-          {
-            to: "/gallery/home-tour-360",
-            label: "Home Tour 360",
-            description:
-              "Get an up close rule of some of our most impressive homes",
-            src: VideoSvg,
-          },
-        ]}
+        options={dropdownOptions.gallery}
         closeMenu={closeMenu}
         activeDropdown={activeDropdown}
         setActiveDropdown={setActiveDropdown}
@@ -166,60 +207,15 @@ export const Navlist = ({ closeMenu, isOpen, wrap }) => {
       />
       <DropdownNav
         label="Resources"
-        options={[
-          {
-            to: "/resources/blogs",
-            label: "Blogs",
-            description:
-              "impressive articles for homeowners by experts in log home industry",
-            src: BookSvg,
-          },
-          {
-            to: "/resources/testimonials",
-            label: "Testimonials",
-            description: "Meet homeowners how have built there dream homes",
-            src: StarSvg,
-          },
-          {
-            to: "/resources/faqs",
-            label: "FAQs",
-            description: "get answers to your questions",
-            src: FAQSvg,
-          },
-        ]}
+        options={dropdownOptions.resources}
         closeMenu={closeMenu}
         activeDropdown={activeDropdown}
         setActiveDropdown={setActiveDropdown}
         id="resources"
       />
       <DropdownNav
-        label="About US"
-        options={[
-          {
-            to: "/about-us/difference",
-            label: "Difference",
-            description: "Lear what sets Hochstetler apart",
-            src: StarSvg,
-          },
-          {
-            to: "/about-us/rentals",
-            label: "Rentals",
-            description: "Experience a hochstetler log home for yourself",
-            src: Bed,
-          },
-          {
-            to: "/about-us/speciality-structures",
-            label: "Speciality Structures",
-            description: "See our speaciality timber builds",
-            src: StructureSvg,
-          },
-          {
-            to: "/about-us/commercials",
-            label: "Commercial Structures",
-            description: "See our commercial timber build projects",
-            src: TruckSvg,
-          },
-        ]}
+        label="About Us"
+        options={dropdownOptions.aboutUs}
         closeMenu={closeMenu}
         activeDropdown={activeDropdown}
         setActiveDropdown={setActiveDropdown}
@@ -231,39 +227,33 @@ export const Navlist = ({ closeMenu, isOpen, wrap }) => {
         closeMenu={closeMenu}
       />
       <ButtonPrimary
-        text={"See Floor Plans"}
-        onClick={() => navigate("/floor-plans")} // Update the correct route here
+        text="See Floor Plans"
+        onClick={() => navigate("/floor-plans")}
       />
     </ul>
   );
 };
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const toggleMenu = () => {
-    setIsOpen((prev) => !prev);
-  };
-
-  const closeMenu = () => setIsOpen(false);
 
   return (
     <div className="nav-container">
-    <Top m_no={"XXXXXXXXXX"}/>
+      <Top m_no="XXXXXXXXXX" />
       <nav className="navbar">
         <h1 className="navbar-brand" onClick={() => navigate("/")}>
-          <img src={logo} alt="" />
+          <img src={logo} alt="Brand Logo" />
         </h1>
         <button
           className={`hamburgur ${isOpen ? "open" : ""} btn`}
-          onClick={toggleMenu}
+          onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle navigation"
         >
           <i className="fa-solid fa-bars"></i>
         </button>
-
         <div className={`nav ${isOpen ? "open" : ""}`}>
-          <Navlist closeMenu={closeMenu} isOpen={isOpen} wrap={false} />
-          <div className="navbar-cta"></div>
+          <NavList closeMenu={() => setIsOpen(false)} isOpen={isOpen} />
         </div>
       </nav>
     </div>
