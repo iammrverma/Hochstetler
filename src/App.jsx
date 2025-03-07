@@ -1,11 +1,6 @@
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-// import AboutUs from "./components/AboutUs";
-// import Services from "./components/Services";
-// import Portfolio from "./components/Portfolio";
-// import Contact from "./components/Contact";
-
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
@@ -19,7 +14,6 @@ import Testimonials from "./pages/Testimonials";
 import FAQs from "./pages/FAQs";
 
 import Difference from "./pages/Difference";
-// import Rentals from "./pages/Rentals";
 import Rentals from "./pages/Rentals";
 import SpecialityStructures from "./pages/SpecialityStructures";
 import Commercials from "./pages/Commercials";

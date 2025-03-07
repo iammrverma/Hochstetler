@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import SearchInput from "../components/SearchInput";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/buttons/ButtonPrimary";
-import floorPlan1 from "../assets/floor-plan-1.jpg";
-const BlogCard = ({ src, to, title, description }) => {
+import { blogs } from "../../public/data";
+import { capitalize } from "../util";
+
+const BlogCard = ({ title, description }) => {
   const navigate = useNavigate();
+  const src = `/Hochstetler/blogs/${title.replace(/ /g, "_")}.jpg`; // adding hochstetler here is important
+  const to = `./${title.replace(/ /g, "_")}`;
+  const capTitle = capitalize(title);
   return (
     <div className="fp" onClick={() => navigate(to)}>
       <div className="fp-img-box">
         <img
           src={src}
-          alt="src "
+          alt={src}
           style={{
             width: "100%",
             height: "100%",
@@ -23,7 +28,7 @@ const BlogCard = ({ src, to, title, description }) => {
         className="flex-column"
         style={{ alignItems: "flex-start", padding: "1rem", gap: "1.5rem" }}
       >
-        <h4 className="text-green">{title}</h4>
+        <h4 className="text-green">{capTitle}</h4>
         <p className="text-green">{description}</p>
       </div>
 
@@ -37,6 +42,15 @@ const BlogCard = ({ src, to, title, description }) => {
   );
 };
 const Blogs = () => {
+  const [value, setValue] = useState("");
+  const filteredBlogs = value
+    ? blogs.filter(
+        (blog) =>
+          blog.title.includes(value.toLowerCase()) ||
+          blog.description.toLowerCase().includes(value.toLowerCase()) 
+      )
+    : blogs;
+
   return (
     <div>
       <Header title={"Log Home Resources"} className={"background-light"} />
@@ -53,7 +67,11 @@ const Blogs = () => {
             Helpful insights from log home experts
           </h3>
           <div>
-            <SearchInput title={"Search Here"} />
+            <SearchInput
+              title={"Search Here"}
+              value={value}
+              setValue={(e) => setValue(e.target.value)}
+            />
           </div>
         </div>
         <div
@@ -63,77 +81,9 @@ const Blogs = () => {
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
           }}
         >
-          <BlogCard
-            title={"Tips For Lighting Your Log Home"}
-            description={
-              "Lighting plays a crucial role in showcasing the warmth and character of a log home. From natural light to well-placed fixtures, here’s how to create the perfect ambiance while enhancing function and efficiency"
-            }
-            src={floorPlan1}
-          />
-          <BlogCard
-            title={"Are Log Homes Drafty? Here's What The Tests Say."}
-            description={
-              "A recent air infiltration test proved that a Hochstetler Log Home exceeded energy efficiency standards—here’s how"
-            }
-            src={floorPlan1}
-          />
-
-          <BlogCard
-            src={floorPlan1}
-            title={"Tips For Lighting Your Log Home"}
-            description={
-              "Lighting plays a crucial role in showcasing the warmth and character of a log home. From natural light to well-placed fixtures, here’s how to create the perfect ambiance while enhancing function and efficiency"
-            }
-          />
-          <BlogCard
-            src={floorPlan1}
-            title={"Tips For Lighting Your Log Home"}
-            description={
-              "Lighting plays a crucial role in showcasing the warmth and character of a log home. From natural light to well-placed fixtures, here’s how to create the perfect ambiance while enhancing function and efficiency"
-            }
-          />
-          <BlogCard
-            src={floorPlan1}
-            title={"Tips For Lighting Your Log Home"}
-            description={
-              "Lighting plays a crucial role in showcasing the warmth and character of a log home. From natural light to well-placed fixtures, here’s how to create the perfect ambiance while enhancing function and efficiency"
-            }
-          />
-          <BlogCard
-            src={floorPlan1}
-            title={"Tips For Lighting Your Log Home"}
-            description={
-              "Lighting plays a crucial role in showcasing the warmth and character of a log home. From natural light to well-placed fixtures, here’s how to create the perfect ambiance while enhancing function and efficiency"
-            }
-          />
-          <BlogCard
-            src={floorPlan1}
-            title={"Tips For Lighting Your Log Home"}
-            description={
-              "Lighting plays a crucial role in showcasing the warmth and character of a log home. From natural light to well-placed fixtures, here’s how to create the perfect ambiance while enhancing function and efficiency"
-            }
-          />
-          <BlogCard
-            src={floorPlan1}
-            title={"Tips For Lighting Your Log Home"}
-            description={
-              "Lighting plays a crucial role in showcasing the warmth and character of a log home. From natural light to well-placed fixtures, here’s how to create the perfect ambiance while enhancing function and efficiency"
-            }
-          />
-          <BlogCard
-            src={floorPlan1}
-            title={"Tips For Lighting Your Log Home"}
-            description={
-              "Lighting plays a crucial role in showcasing the warmth and character of a log home. From natural light to well-placed fixtures, here’s how to create the perfect ambiance while enhancing function and efficiency"
-            }
-          />
-          <BlogCard
-            src={floorPlan1}
-            title={"Tips For Lighting Your Log Home"}
-            description={
-              "Lighting plays a crucial role in showcasing the warmth and character of a log home. From natural light to well-placed fixtures, here’s how to create the perfect ambiance while enhancing function and efficiency"
-            }
-          />
+          {filteredBlogs.map((blog) => (
+            <BlogCard title={blog.title} description={blog.description} />
+          ))}
         </div>
       </div>
     </div>

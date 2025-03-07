@@ -10,8 +10,9 @@ import Hero2 from "../components/Hero2";
 import ProjectGalleryCard from "../components/ProjectGalleryCard";
 import LogHouse from "../components/svgs/LogHouse";
 import PDF from "../components/svgs/PDF";
-import { scrollTo } from "../util";
+import { capitalize, scrollTo } from "../util";
 import Input from "../components/Input";
+
 
 const Card = ({ icon: Icon, title, paras, to, text }) => {
   return (
@@ -176,8 +177,7 @@ const FloorPlanDetail = () => {
   const to = `/gallery/project-gallery/${title.replace(/ /g, "_")}`;
   const floorMap = `/Hochstetler/floorMaps/${title.replace(/ /g, "_")}.jpg`;
 
-  const capTitle = title.replace(/\b\w/g, (char) => char.toUpperCase());
-
+  const capTitle = capitalize(title);
   return (
     <>
       <div
