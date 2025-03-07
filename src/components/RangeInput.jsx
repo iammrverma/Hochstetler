@@ -3,11 +3,11 @@ import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 
-const RangeInput = ({ min, max, lable }) => {
-  const [value, setValue] = useState([min, max]); // updated with user interaction
-
+const RangeInput = ({ min, max, lable, inputArea, setInputArea }) => {
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    console.log(newValue);
+    
+    setInputArea(newValue);
   };
 
   return (
@@ -15,16 +15,16 @@ const RangeInput = ({ min, max, lable }) => {
       {/* Labels */}
       <Box display="flex" justifyContent="space-between">
         <Typography variant="body1">
-          {value[0]} {lable}
+          {inputArea[0]} {lable}
         </Typography>
         <Typography variant="body1">
-          {value[1]} {lable}
+          {inputArea[1]} {lable}
         </Typography>
       </Box>
 
       {/* Range Slider */}
       <Slider
-        value={value}
+        value={inputArea}
         onChange={handleChange}
         valueLabelDisplay="auto"
         min={min} // min range

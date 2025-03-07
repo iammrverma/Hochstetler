@@ -2,7 +2,7 @@ export const floorPlans = [
   //to be used to render title and the image therefore image name under floorPlansImages and floorMaps should be exactly the title where " " -> "_" with .jpg extention
   {
     title: "acadia log home",
-    area: "1864",
+    area: 1864,
     bedrooms: "3",
     bathrooms: "2",
     about:
@@ -11,7 +11,7 @@ export const floorPlans = [
   },
   {
     title: "black fork log home",
-    area: "1095",
+    area: 1095,
     bedrooms: "1",
     bathrooms: "1",
     about:
@@ -24,7 +24,7 @@ export const floorPlans = [
   },
   {
     title: "clear fork log home",
-    area: "2975",
+    area: 2975,
     bedrooms: "3",
     bathrooms: "3",
     about:
@@ -37,7 +37,7 @@ export const floorPlans = [
   },
   {
     title: "eagle point log home",
-    area: "1871",
+    area: 1871,
     bedrooms: "3",
     bathrooms: "2.5",
     about:
@@ -46,7 +46,7 @@ export const floorPlans = [
   },
   {
     title: "green tento log home",
-    area: "3440",
+    area: 3440,
     bedrooms: "3",
     bathrooms: "2.5",
     about:
@@ -59,7 +59,7 @@ export const floorPlans = [
   },
   {
     title: "lake view log home",
-    area: "3182",
+    area: 3182,
     bedrooms: "3",
     bathrooms: "2",
     about:
@@ -85,7 +85,7 @@ export const floorPlans = [
   },
   {
     title: "lexinton log home",
-    area: "2652",
+    area: 2652,
     bedrooms: "4",
     bathrooms: "3",
     about:

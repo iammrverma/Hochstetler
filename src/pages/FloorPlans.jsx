@@ -22,10 +22,15 @@ const Filter = ({ title, onClear, children }) => {
     </div>
   );
 };
-const FilterCheckbox = ({ value, lable }) => {
+const FilterCheckbox = ({ value, lable, checked, onChange }) => {
   return (
     <li className="flex" style={{ alignItems: "center", gap: ".25rem" }}>
-      <input type="checkbox" value={value} />
+      <input
+        type="checkbox"
+        value={value}
+        checked={checked}
+        onChange={onChange}
+      />
       {value} {lable}
     </li>
   );
@@ -34,12 +39,45 @@ const FilterCheckbox = ({ value, lable }) => {
 const FloorPlans = () => {
   const { floorPlans } = useFloorPlans();
   const totalFloorPlans = floorPlans.length;
-  const visibleFloorPlans = totalFloorPlans;
+  const [search, setSearch] = useState("");
+  const [selectedBeds, setSelectedBeds] = useState([]);
+  const [selectedBaths, setSelectedBaths] = useState([]);
+  const [inputArea, setInputArea] = useState([100, 5000]);
 
-  const [inputArea, setInputArea] = useState(null);
-  const [inputBed, setInputBed] = useState(null);
-  const [inputBath, setInputBath] = useState(null);
+  const minArea = inputArea[0];
+  const maxArea = inputArea[1];
 
+  // console.log(value, inputArea, inputBed, inputBath);
+
+  // Filtering logic
+  const filteredFloorPlans = floorPlans.filter((fp) => {
+    // Search filter
+    const matchesSearch = fp.title.toLowerCase().includes(search.toLowerCase());
+
+    // Area filter
+    const matchesArea = fp.area >= minArea && fp.area <= maxArea;
+
+    // Bedroom filter
+    const matchesBeds =
+      selectedBeds.length === 0 || selectedBeds.includes(fp.bedrooms);
+
+    // Bathroom filter
+    const matchesBaths =
+      selectedBaths.length === 0 || selectedBaths.includes(fp.bathrooms);
+
+    return matchesSearch && matchesBeds && matchesArea && matchesBaths;
+  });
+
+  const clearArea = () => setInputArea([100, 5000]);
+  const clearBeds = () => setSelectedBeds([]);
+  const clearBaths = () => setSelectedBaths([]);
+  const handleCheckboxChange = (setState, value) => {
+    setState((prev) =>
+      prev.includes(value)
+        ? prev.filter((item) => item !== value)
+        : [...prev, value]
+    );
+  };
   return (
     <>
       <div className="background-light" style={{ padding: "2rem" }}>
@@ -82,28 +120,60 @@ const FloorPlans = () => {
               <h3 className="text-green">Filters</h3>
               <div className="flex" style={{ justifyContent: "space-between" }}>
                 <div className="resultSummary" style={{ textWrap: "wrap" }}>
-                  Showing {visibleFloorPlans} of {totalFloorPlans} items{" "}
+                  Showing {filteredFloorPlans.length} of {totalFloorPlans} items{" "}
                 </div>
-                <div className="reset link">Reset All</div>
+                <div
+                  onClick={() => {
+                    clearArea();
+                    clearBeds();
+                    clearBaths();
+                    setSearch("");
+                  }}
+                  className="link"
+                >
+                  Reset All
+                </div>
               </div>
-              <SearchInput title={"Search Here"} />
-              <Filter title={"Square Footage"} onClear={() => setInputArea(0)}>
-                <RangeInput min={500} max={5000} />
+              <SearchInput
+                title={"Search Here"}
+                value={search}
+                setValue={(e) => setSearch(e.target.value)}
+              />
+              {/* Square footage Area */}
+              <Filter title={"Square Footage"} onClear={clearArea}>
+                <RangeInput
+                  min={100}
+                  max={5000}
+                  inputArea={inputArea}
+                  setInputArea={setInputArea}
+                />
               </Filter>
-              <Filter title={"Bedrooms"} onClear={() => setInputBed(0)}>
-                <FilterCheckbox lable={"Bedroom"} value={1} />
-                <FilterCheckbox lable={"Bedroom"} value={2} />
-                <FilterCheckbox lable={"Bedroom"} value={3} />
-                <FilterCheckbox lable={"Bedroom"} value={4} />
-                <FilterCheckbox lable={"Bedroom"} value={5} />
+
+              {/* Bedrooms Filter */}
+              <Filter title="Bedrooms" onClear={clearBeds}>
+                {["1", "2", "3", "4", "5"].map((bed) => (
+                  <FilterCheckbox
+                    key={bed}
+                    value={bed}
+                    label="Bedroom"
+                    checked={selectedBeds.includes(bed)}
+                    onChange={() => handleCheckboxChange(setSelectedBeds, bed)}
+                  />
+                ))}
               </Filter>
-              <Filter title={"Bathrooms"} onClear={() => setInputBath(0)}>
-                <FilterCheckbox lable={"Bath"} value={1} />
-                <FilterCheckbox lable={"Bath"} value={1.5} />
-                <FilterCheckbox lable={"Bath"} value={2} />
-                <FilterCheckbox lable={"Bath"} value={2.5} />
-                <FilterCheckbox lable={"Bath"} value={3} />
-                <FilterCheckbox lable={"Bath"} value={3.5} />
+              {/* Bathrooms Filter */}
+              <Filter title="Bathrooms" onClear={clearBaths}>
+                {["1", "1.5", "2", "2.5", "3", "3.5"].map((bath) => (
+                  <FilterCheckbox
+                    key={bath}
+                    value={bath}
+                    label="Bath"
+                    checked={selectedBaths.includes(bath)}
+                    onChange={() =>
+                      handleCheckboxChange(setSelectedBaths, bath)
+                    }
+                  />
+                ))}
               </Filter>
             </div>
           </div>
@@ -115,7 +185,7 @@ const FloorPlans = () => {
               gap: "2rem",
             }}
           >
-            {floorPlans.map((plan, index) => (
+            {filteredFloorPlans.map((plan, index) => (
               <FloorPlanCard plan={plan} key={index} />
             ))}
           </div>
