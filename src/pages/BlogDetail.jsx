@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import headerBg from "../assets/header-bg.png";
 import { blogs } from "../../public/data";
 import CopySvg from "../components/svgs/CopySvg";
+import { BlogCard } from "./Blogs";
 
 const SubNav = ({ title }) => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const BlogDetail = () => {
   const src = `/Hochstetler/blogs/${name}.jpg`; // adding hochstetler here is important
   const blog = blogs.find((blog) => blog.title === title.toLowerCase());
 
-  const { description, read, author, sections } = blog;
+  const { description, read, author, sections, suggetions } = blog;
   const [showCopied, setShowCopied] = useState(false);
 
   const handleClick = () => {
@@ -101,16 +102,20 @@ const BlogDetail = () => {
           <div className="project-header-padding">
             <div className="blog-head-wrapper">
               <div className="blog-rich-text ">
-                {sections.map((section, si) => (
+                {sections?.map((section, si) => (
                   <div
                     className="flex-column"
                     style={{ gap: "1rem", marginTop: "1rem" }}
                     key={`section-${si}`}
                   >
-                    <h3 className="heading-style-h4 text-green-light">
-                      {section.heading}
-                    </h3>
-                    {si === 0 && <p style={{ fontWeight: "600" }}>{author}</p>}
+                    {section.heading && (
+                      <h3 className="heading-style-h4 text-green-light">
+                        {section.heading}
+                      </h3>
+                    )}
+                    {si === 0 && author && (
+                      <p style={{ fontWeight: "600" }}>{author}</p>
+                    )}
                     {section.paras?.map((p, pi) => (
                       <p key={`section-${si}-${pi}`}>{p}</p>
                     ))}
@@ -118,6 +123,23 @@ const BlogDetail = () => {
                 ))}
               </div>
             </div>
+            {suggetions && (
+              <>
+                <div className="heading-style-h2 text-green">More Articles</div>
+                <div className="spacer-medium"></div>
+                <div
+                  className="grid"
+                  style={{
+                    gap: "2rem",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                  }}
+                >
+                  {suggetions.map((s) => (
+                    <BlogCard key={s} title={s} />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

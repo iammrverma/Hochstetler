@@ -13,7 +13,6 @@ import PDF from "../components/svgs/PDF";
 import { capitalize, scrollTo } from "../util";
 import Input from "../components/Input";
 
-
 const Card = ({ icon: Icon, title, paras, to, text }) => {
   return (
     <div
@@ -221,7 +220,7 @@ const FloorPlanDetail = () => {
               <p className="text-green">Floor Plans</p>{" "}
               <p className="text-neutral-light">{` > ${capTitle}`}</p>{" "}
             </div>
-            <h2 className="text-green">{capTitle}</h2>
+            <h2 className="text-green heading-style-h1">{capTitle}</h2>
             <div
               className={large ? "flex" : "flex-column"}
               style={{

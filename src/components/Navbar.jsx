@@ -35,13 +35,13 @@ const NavLink = ({ to, label, closeMenu }) => {
 const dropdownOptions = {
   gallery: [
     {
-      to: "/gallery/project-gallery",
+      to: "/project-gallery",
       label: "Project Gallery",
       description: "Be Inspired by the wonderous spaces our clients call home",
       src: ImageSvg,
     },
     {
-      to: "/gallery/home-tour-360",
+      to: "/home-tour-360",
       label: "Home Tour 360",
       description: "Get an up-close tour of our most impressive homes",
       src: VideoSvg,
@@ -49,19 +49,19 @@ const dropdownOptions = {
   ],
   resources: [
     {
-      to: "/resources/blogs",
+      to: "/blogs",
       label: "Blogs",
       description: "Articles for homeowners by log home experts",
       src: BookSvg,
     },
     {
-      to: "/resources/testimonials",
+      to: "/testimonials",
       label: "Testimonials",
       description: "Meet homeowners who built their dream homes",
       src: StarSvg,
     },
     {
-      to: "/resources/faqs",
+      to: "/faqs",
       label: "FAQs",
       description: "Get answers to your questions",
       src: FAQSvg,
@@ -69,19 +69,19 @@ const dropdownOptions = {
   ],
   aboutUs: [
     {
-      to: "/about-us/rentals",
+      to: "/rentals",
       label: "Rentals",
       description: "Experience a Hochstetler log home",
       src: Bed,
     },
     {
-      to: "/about-us/speciality-structures",
+      to: "/speciality-structures",
       label: "Speciality Structures",
       description: "See our specialty timber builds",
       src: StructureSvg,
     },
     {
-      to: "/about-us/commercials",
+      to: "/commercials",
       label: "Commercial Structures",
       description: "Explore commercial timber projects",
       src: TruckSvg,

@@ -160,8 +160,11 @@ export const blogs = [
         ],
       },
     ],
+    suggetions: [
+      `are log homes considered green`,
+      `is it better to build a new log home or buy an existing one`,
+    ],
   },
-
   {
     title: "tips for lighting your log home", // keep it small case
     description:
@@ -193,6 +196,10 @@ export const blogs = [
         ],
       },
     ],
+    suggetions: [
+      `are log homes considered green`,
+      `is it better to build a new log home or buy an existing one`,
+    ],
   },
   {
     title: "log home interior design ideas", // keep it small case
@@ -212,6 +219,10 @@ export const blogs = [
         ],
       },
     ],
+    suggetions: [
+      `are log homes considered green`,
+      `is it better to build a new log home or buy an existing one`,
+    ],
   },
   {
     title: "log home interior design ideas", // keep it small case
@@ -228,6 +239,92 @@ export const blogs = [
           "As a general rule of thumb, I prefer to start with the heart of the home, the kitchen.  Start with your kitchen cabinets. There are 2 basic styles of doors to choose from with variations on edging profiles. The first style is a raised panel option (traditional) and the second style is a recessed flat panel (shaker).  Next it’s time to determine if your cabinets will be stained, painted, or perhaps a combination of the two. You can add a pop of color on the kitchen island while keeping the wall cabinets stained or a neutral paint color",
           "Once the style and finishes of your kitchen cabinets have been made, it’s time to move on to your flooring and countertop options. When considering your flooring options (wood, tile, L.V.T), do your research and determine which type of flooring suites your budget and lifestyle. Also keep in mind that if you’re doing a tile floor that has a lot of variation and movement consider choosing a countertop material that won’t compete pattern wise. Or vice versa, if selecting a wood floor, consider choosing a countertop material that does have some variation or “movement”.",
           "With some of these main design choices made (cabinets, flooring, countertops) other materials and finishes, such as backsplash tile, wall color, and cabinet hardware options will start to fall into place. However, if your selections aren’t coming together like you thought they would and your questioning some of your design choices, consider hiring an interior designer to assist you. That’s what we’re here for!",
+        ],
+      },
+    ],
+    suggetions: [
+      `are log homes considered green`,
+      `is it better to build a new log home or buy an existing one`,
+    ],
+  },
+  {
+    title: `are log homes considered green`,
+    description:
+      "Sustainable materials, energy-saving designs, and eco-friendly construction make log homes an environmentally responsible choice.",
+    read: "2",
+    author: "By Jim Kanagy for Hochstetler Log Homes",
+    sections: [
+      {
+        heading:
+          "Building green goes beyond materials—it focuses on smart design and construction methods that enhance energy efficiency and promote a healthier living environment.",
+        paras: [
+          `Building green encompasses an overall lifestyle philosophy which includes building our homes in ways that utilize energy-efficient materials and conserve natural resources today while providing a cleaner environment for our children tomorrow.`,
+          `Building green is a practical approach to design and construction that balances environmental impact with efficiency. It includes thoughtful design choices, sustainable material selection, and strategic site orientation to maximize energy efficiency.`,
+        ],
+      },
+      {
+        heading: "How Green Building Affects Material Choices",
+        paras: [
+          `So the question is, how does building green affect the choice of building materials? Log homes utilize a substantial amount of wood in the walls and throughout the entire project. Wood, I might add, is a very sustainable and prolific building material.`,
+          `Since logs utilize a principle called “thermal mass,” they are an excellent material for conserving energy and saving money. Logs have the ability to absorb and store heat, then release it later, creating a natural thermal break that helps regulate indoor temperatures year-round.`,
+        ],
+      },
+      {
+        heading: `Other Sustainable Building Materials`,
+        paras: [
+          `Non-toxic, sustainable, and natural materials such as stone, glass, and metal are also becoming more popular. Additionally, engineered products like SIP panels, concrete foundations, and energy-efficient windows contribute to a home’s overall sustainability. Sustainable green building practices have our families' interests at heart.`,
+          `By considering the type of materials we use, we can lower the energy demands of our homes and create a cleaner environment for future generations.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: `is it better to build a new log home or buy an existing one`,
+    description:
+      "Building a new log home offers customization, energy efficiency, and long-term value—here’s why it may be the right choice for you.",
+    read: "3",
+    sections: [
+      {
+        heading: `Building a log home is an exciting journey, and while buying an existing home may seem easier, new construction offers many advantages.`,
+        paras: [
+          "From customization to energy efficiency, designing your own log home can make a big difference for your family in the long run.",
+        ],
+      },
+      {
+        heading: `Resale Value`,
+        paras: [
+          `Most potential log home buyers are looking first and foremost at the price tag. Building a new home can appear to be more expensive than purchasing an existing house, especially if they need to buy land as well. But considering the home as an investment, the resale value for new homes is much higher than that of existing ones, especially if the new home’s design choices aren’t here-today-gone-tomorrow trends. In order to increase the resale value of an existing house, particularly those older than 10 years, some time, money, and skill will be involved in updates and renovations. Therefore, it may still cost you in the long run.`,
+        ],
+      },
+      {
+        heading: `Customization`,
+        paras: [
+          `What attracts most log home buyers is the opportunity for customization. You are able to include in your new log home all the elements that suit your family best. From the custom floor plan to design finishes, the home will be truly custom—a home designed just for you. Most of the time, buyers of existing homes get almost everything they want but will have to compromise on some of their must-haves. So you want an open floor plan and a first-floor master? Sometimes getting both is difficult in an older home. This means you will end up making renovations to the home anyway. Finally, keep in mind that being able to choose the square footage of the home along with the style and layout from start to finish means maximizing the use of every space in the home.`,
+          `For many potential homeowners, moving into a home that has never before been lived in is enticing. Knowing all of the memories made in the home are your own brings a sense of pride and comfort.`,
+        ],
+      },
+      {
+        heading: `Maintenance and Warranties`,
+        paras: [
+          `Existing homes can bring baggage. Expiring warranties and general wear and tear can mean hidden costs down the road, particularly when it comes to windows and roofing. A new roof increases a home’s value, so when you build a new home, you are increasing your return on your investment by upping the resale value. Other factors like basement waterproofing and new home security systems further ensure the home will maintain its value for years to come.`,
+        ],
+      },
+      {
+        heading: `Health and Efficiency`,
+        paras: [
+          `New heating and cooling systems can—quite literally—bring a breath of fresh air. Not only are they more energy efficient, but newer systems adhere to standards of health and safety that mean a healthier environment for your family`,
+        ],
+      },
+      {
+        heading: `Wait Time`,
+        paras: [
+          `If you’re worried about waiting for a new home to be built, it’s important to work with a company that has a track record of finishing jobs efficiently and on time.`,
+        ],
+      },
+      {
+        heading: `Building a New Home is an Adventure!`,
+        paras: [
+          `The benefits of new construction are many, and whether you plan to buy or build is a choice that must fit your family’s vision and situation.`,
         ],
       },
     ],

@@ -206,6 +206,13 @@ p {
   width: 100%;
   padding-top: 2rem;
 }
+.heading-style-h1 {
+  font-family: var(--quincy-cf);
+  letter-spacing: -.04em;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.05;
+}
 .heading-style-h2 {
   letter-spacing: -0.03em;
   font-family: quincy-cf, sans-serif;

@@ -6,11 +6,12 @@ import ButtonPrimary from "../components/buttons/ButtonPrimary";
 import { blogs } from "../../public/data";
 import { capitalize } from "../util";
 
-const BlogCard = ({ title, description }) => {
+export const BlogCard = ({ title }) => {
   const navigate = useNavigate();
   const src = `/Hochstetler/blogs/${title.replace(/ /g, "_")}.jpg`; // adding hochstetler here is important
-  const to = `./${title.replace(/ /g, "_")}`;
+  const to = `/blogs/${title.replace(/ /g, "_")}`;
   const capTitle = capitalize(title);
+  const blog = blogs.find((blog) => blog.title === title);
   return (
     <div className="fp" onClick={() => navigate(to)}>
       <div className="fp-img-box">
@@ -29,7 +30,7 @@ const BlogCard = ({ title, description }) => {
         style={{ alignItems: "flex-start", padding: "1rem", gap: "1.5rem" }}
       >
         <h4 className="text-green">{capTitle}</h4>
-        <p className="text-green">{description}</p>
+        <p className="text-green">{blog?.description}</p>
       </div>
 
       <ButtonPrimary
@@ -47,7 +48,7 @@ const Blogs = () => {
     ? blogs.filter(
         (blog) =>
           blog.title.includes(value.toLowerCase()) ||
-          blog.description.toLowerCase().includes(value.toLowerCase()) 
+          blog.description.toLowerCase().includes(value.toLowerCase())
       )
     : blogs;
 
@@ -82,7 +83,7 @@ const Blogs = () => {
           }}
         >
           {filteredBlogs.map((blog) => (
-            <BlogCard title={blog.title} description={blog.description} />
+            <BlogCard title={blog.title} />
           ))}
         </div>
       </div>

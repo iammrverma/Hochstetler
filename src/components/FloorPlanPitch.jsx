@@ -111,23 +111,8 @@ const FloorPlanPitch = () => {
                 padding: "0.5rem",
               }}
             >
-              <VerticalList
-                list={[
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                ]}
-              >
-                {(data) => (
-                  <FloorPlanCardMinimal
-                    src={data.src}
-                    to={data.to}
-                    title={data.title}
-                  />
-                )}
+              <VerticalList list={floorPlans}>
+                {(data) => <FloorPlanCardMinimal title={data.title} />}
               </VerticalList>
             </div>
 
@@ -142,23 +127,10 @@ const FloorPlanPitch = () => {
               }}
             >
               <VerticalList
-                list={[
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                ]}
+                list={floorPlans.slice(-1)}
                 styles={{ paddingTop: "5rem" }}
               >
-                {(data) => (
-                  <FloorPlanCardMinimal
-                    src={data.src}
-                    to={data.to}
-                    title={data.title}
-                  />
-                )}
+                {(data) => <FloorPlanCardMinimal title={data.title} />}
               </VerticalList>
             </div>
           </>
@@ -174,17 +146,7 @@ const FloorPlanPitch = () => {
               }}
             >
               <VerticalList list={floorPlans.slice(0, 5)}>
-                {(data) => (
-                  <FloorPlanCard
-                    plan={{
-                      ...data,
-                      area: 250,
-                      bedrooms: 2,
-                      bathrooms: 3,
-                      title: "title",
-                    }}
-                  />
-                )}
+                {(data) => <FloorPlanCard plan={data} />}
               </VerticalList>
             </div>
             <ButtonPrimary
