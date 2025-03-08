@@ -27,7 +27,7 @@ const Hero2 = ({
             <div className="text-green-light uppercase">{smallheading}</div>
           )}
           <div className={`${headingWrap ? "flex" : ""}`}>
-            <h2 className={`heading-style-h1 ${headingClass}`}>
+            <h2  className={`heading-style-h1 ${headingClass}`}>
               {heading?.main}
               <span className="text-green-accent"> {heading?.span}</span>
             </h2>

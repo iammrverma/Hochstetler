@@ -4,7 +4,7 @@ import Form from "../components/Form";
 const Contact = () => {
   return (
     <div className="contact-grid grid-2-1">
-      <div className="contact-left-wrapper">
+      <div className="contact-left-wrapper background-light">
         <div className="heading-style-h2 text-green">Contact</div>
         <div className="heading-style-h4">
           Get straightforward answers direct from log home experts.
