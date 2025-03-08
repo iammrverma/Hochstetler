@@ -1,7 +1,4 @@
 import React from "react";
-
-import hero2img from "../assets/hero2.jpg";
-import hero1img from "../assets/hero1.webp";
 import ButtonPrimary from "./buttons/ButtonPrimary";
 import ProjectGalleryCard from "./ProjectGalleryCard";
 import { projects } from "../../public/data";
@@ -19,7 +16,7 @@ const Hero3 = () => {
           />
         ))}
       </div>
-      <ButtonPrimary text={"View Our projects"} />
+      <ButtonPrimary text={"View Our projects"} to={"/project-gallery"}/>
     </div>
   );
 };

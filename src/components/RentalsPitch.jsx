@@ -32,7 +32,7 @@ const RentalsPitch = () => {
           quality, and charm that could be yours.
         </p>
         <div>
-          <ButtonPrimary text={"Stay in Hochstetler Log Home"} />
+          <ButtonPrimary text={"Stay in Hochstetler Log Home"} to={"/rentals"}/>
         </div>
       </div>
     </div>

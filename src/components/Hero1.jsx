@@ -28,7 +28,7 @@ const Hero1 = () => {
           Amerish classic log home for rich and woody Aesthetic
         </p>
         <p></p>
-        <ButtonPrimary text={"View Log Home Floor Plans"} />
+        <ButtonPrimary text={"View Log Home Floor Plans"} to={"/floor-plans"}/>
       </div>
     </div>
   );

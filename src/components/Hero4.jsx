@@ -30,7 +30,7 @@ const Hero4 = ({ heading, description }) => {
           <span className="text-green-accent">{" "}{heading?.span}</span>
         </h1>
         <p className="text-white text-size-med">{description}</p>
-        <ButtonPrimary text={"View Log Home Floor Plans"} />
+        <ButtonPrimary text={"Our Log Home Packages"} to={"/difference"}/>
       </div>
     </div>
   );
