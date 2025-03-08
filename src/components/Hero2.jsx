@@ -7,6 +7,7 @@ const Hero2 = ({
   smallheading,
   description,
   headingWrap,
+  headingClass = "text-green",
   style,
 }) => {
   return (
@@ -26,18 +27,23 @@ const Hero2 = ({
             <div className="text-green-light uppercase">{smallheading}</div>
           )}
           <div className={`${headingWrap ? "flex" : ""}`}>
-            <h2 className="text-green">{heading?.main}
-            <span className="text-green-accent">{" "}{heading?.span}</span></h2>
+            <h2 className={`heading-style-h1 ${headingClass}`}>
+              {heading?.main}
+              <span className="text-green-accent"> {heading?.span}</span>
+            </h2>
           </div>
         </div>
 
         <div>
           {subheading && (
-            <h3 className={`heading-style-h4`} style={{ paddingBottom: "1rem" }}>
+            <h3
+              className={`heading-style-h4`}
+              style={{ paddingBottom: "1rem" }}
+            >
               {subheading}
             </h3>
           )}
-          <p className="text-size-regular">{description}</p>
+          <p className="text-size-medium text-dark">{description}</p>
         </div>
       </div>
     </div>

@@ -30,7 +30,7 @@ const Header = ({
       >
         <img
           src={image}
-          alt=""
+          alt={image}
           style={{
             width: "100%",
             borderRadius: "var(--radius--radius-med)",

@@ -100,28 +100,40 @@ export const floorPlans = [
 
 export const projects = [
   {
-    title: "Arni Log Home",
+    title: "arni log home",
     location: "ohio",
+    description: `The Arni family’s log home is more than just a house—it’s a testament to resilience, faith, and the love that fills every room. After losing their original home in a devastating explosion, Mark and Chris rebuilt, creating a space that not only accommodates their growing family—including four biological and four adopted children—but also reflects their deep sense of purpose. Based on the Orchardview plan, their home was customized with extra bedrooms, a play loft, and practical spaces tailored to their unique needs. Vibrant murals, personal touches, and inspirational passages make this home a warm, joyful sanctuary where every detail tells a story of strength and gratitude.`,
+    suggetions: ["young log home"], // TODO: Add the correct suggestions accordingly
+    images: 12,
   },
+
   {
-    title: "Convingont Log Home",
+    title: "convingont log home",
     location: "Tennessee",
+    description: `High in the mountains of Tennessee, Larry’s log home, Serenity Hill, is the realization of a lifelong dream inspired by childhood Lincoln Logs and Gatlinburg getaways. Built with Hochstetler Log Homes, the custom design features three bedrooms, a loft, and a full basement, with thoughtful touches like a whiskey barrel stave pantry door and cast metal wildlife-themed railings. Avid hunter and outdoorsman, Larry has created a retreat that blends rustic charm with individuality. With a massive wood-burning fireplace inside and a covered deck overlooking breathtaking mountain views, this home truly lives up to its name.`,
+    suggetions: ["arni log home", "lysons log home", "cargo log home"], // TODO: Add the correct suggestions accordingly
+    images: 16,
   },
   {
-    title: "Lysons Log Home",
+    title: "lysons log home",
     location: "ohio",
+    description: null, // TODO
+    suggetions: ["arni log home", "convingont log home", "cargo log home"], // TODO: Add the correct suggestions accordingly
+    images: 5,
   },
   {
-    title: "Cargo Log Home",
+    title: "cargo log home",
     location: "montana",
+    description: `In the rolling hills of southeastern Ohio, David and Camille Crago built a log home that brings the spirit of the American West to their everyday life. Their journey started years ago on a Montana ranch vacation, where they fell in love with wide-open spaces and the easygoing rhythm of the land. When retirement came, they kept a promise to their sons and joined them on a 37-acre property, working with Hochstetler Log Homes to design a space that felt just right. Inspired by the McKay model, their 3,800 sq. ft. retreat is designed for comfort and connection, from the sunroom overlooking the mountains to the loft’s 14-foot hickory bookshelf. Camille sums it up best: “Every morning, I wake up, look out at the mountains, and see God’s Grandeur at its best.”`,
+    suggetions: ["arni log home", "convingont log home", "lysons log home"], // TODO: Add the correct suggestions accordingly
+    images: 21,
   },
   {
-    title: "Young Log Home",
+    title: "young log home",
     location: "ohio",
-  },
-  {
-    title: "Bell Log Home",
-    location: "ohio",
+    description: `Set on 28 scenic acres with a quiet stream and a hilltop view of a small lake, John and Vicki Young’s log home is the result of years of hard work and vision. Designed with Hochstetler Log Homes, their custom floor plan blends rustic charm with personal craftsmanship, featuring cherry kitchen cabinets, walnut staircase treads, and repurposed barn doors. A mix of antiques and John’s handcrafted creations—like a wagon seat vanity and a printer’s workbench island—fill the home with character. Outside, organic gardens and a charming potting shed complete this dream retreat, a true testament to the American Dream.`,
+    suggetions: ["arni log home", "convingont log home", "lysons log home"], // TODO: Add the correct suggestions accordingly
+    images: 26,
   },
 ];
 
