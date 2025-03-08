@@ -32,8 +32,8 @@ const HomeTour360 = () => {
               gap: "3rem",
             }}
           >
-            <ProjectGalleryCard src={hero1img} title={"title"} />
-            <ProjectGalleryCard src={hero2img} title={"title"} />
+            <ProjectGalleryCard title={"rocky river pavilion"} />
+            <ProjectGalleryCard title={"hocking hills lodge"} />
           </div>
         </div>
       </div>

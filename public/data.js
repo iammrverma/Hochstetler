@@ -98,6 +98,8 @@ export const floorPlans = [
   },
 ];
 
+// public/projects/${title.replace(/ /, "_")}/${index}.jpg
+// public/projects contains different folder each linked with projects and contains several images, it is importatnt to follow the convention where " " -> "_" for folder name this time and use index starting with zero for inside images
 export const projects = [
   {
     title: "arni log home",
@@ -134,6 +136,25 @@ export const projects = [
     description: `Set on 28 scenic acres with a quiet stream and a hilltop view of a small lake, John and Vicki Young’s log home is the result of years of hard work and vision. Designed with Hochstetler Log Homes, their custom floor plan blends rustic charm with personal craftsmanship, featuring cherry kitchen cabinets, walnut staircase treads, and repurposed barn doors. A mix of antiques and John’s handcrafted creations—like a wagon seat vanity and a printer’s workbench island—fill the home with character. Outside, organic gardens and a charming potting shed complete this dream retreat, a true testament to the American Dream.`,
     suggetions: ["arni log home", "convingont log home", "lysons log home"], // TODO: Add the correct suggestions accordingly
     images: 26,
+  },
+  // below two can remain intact
+  {
+    title: "post and beam structures",
+    images: 12,
+  },
+  {
+    title: "timber pavilions",
+    images: 5,
+  },
+  {
+    title: "rocky river pavilion",
+    images: 5,
+    location: "cleveland, oh",
+  },
+  {
+    title: "hocking hills lodge",
+    images: 5,
+    location: "logan, oh",
   },
 ];
 

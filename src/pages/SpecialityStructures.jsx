@@ -33,8 +33,8 @@ const SpecialityStructures = () => {
               gap: "3rem",
             }}
           >
-            <ProjectGalleryCard src={hero1img} title={"title"} />
-            <ProjectGalleryCard src={hero2img} title={"title"} />
+            <ProjectGalleryCard title={"post and beam structures"} />
+            <ProjectGalleryCard title={"timber pavilions"} />
           </div>
         </div>
       </div>

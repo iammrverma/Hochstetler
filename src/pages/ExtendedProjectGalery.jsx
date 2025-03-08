@@ -10,6 +10,7 @@ import { ProjectGalleryRow } from "./ProjectGallery";
 import { useWindowSize } from "../contexts/WindowSizeContext";
 import ProjectGalleryCard from "../components/ProjectGalleryCard";
 import FloorPlanPitch from "../components/FloorPlanPitch";
+import Breadcrumbs from "../components/BreadCrumbs";
 
 const ExtendedProjectGalery = () => {
   const { name } = useParams();
@@ -48,16 +49,8 @@ const ExtendedProjectGalery = () => {
         image={src}
         styles={{ paddingTop: "1rem" }}
       >
-        <div className="bredcrumbs" style={{ fontSize: "1rem" }}>
-          <span
-            className="pointer"
-            onClick={() => navigate("/project-gallery")}
-          >
-            Project Gallery
-          </span>
-          {` > `}
-          <span className="text-neutral-light">{title}</span>
-        </div>
+        <Breadcrumbs />
+
         <div className="project-template-header flex-column">
           <div className="post-heading-wrapper ">
             <Hero2
@@ -105,7 +98,10 @@ const ExtendedProjectGalery = () => {
           <div className="heading-style-h2 text-green">Related Projects</div>
           <div
             className="grid"
-            style={{ gridTemplateColumns: `repeat(${large}, 1fr)`, gap:"1rem" }}
+            style={{
+              gridTemplateColumns: `repeat(${large}, 1fr)`,
+              gap: "1rem",
+            }}
           >
             {project.suggetions.map((suggetions) => (
               <ProjectGalleryCard title={suggetions} />

@@ -47,8 +47,8 @@ const Commercials = () => {
               gap: "3rem",
             }}
           >
-            <ProjectGalleryCard src={hero1img} title={"title"} location={"location"} />
-            <ProjectGalleryCard src={hero2img} title={"title"} location={"location"} />
+            <ProjectGalleryCard title={"rocky river pavilion"} />
+            <ProjectGalleryCard title={"hocking hills lodge"} />
           </div>
         </div>
       </div>

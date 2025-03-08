@@ -226,10 +226,7 @@ export const NavList = ({ closeMenu, isOpen }) => {
         label="Log Cabin Days"
         closeMenu={closeMenu}
       />
-      <ButtonPrimary
-        text="See Floor Plans"
-        onClick={() => navigate("/floor-plans")}
-      />
+      <ButtonPrimary text="See Floor Plans" to={"/floor-plans"} />
     </ul>
   );
 };
