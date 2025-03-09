@@ -42,7 +42,7 @@ export const Top = ({ m_no }) => {
             className="text-white"
             role="button"
             tabIndex="0"
-            onClick={() => navigate("/about-us/difference")}
+            onClick={() => navigate("/difference")}
             style={{ cursor: "pointer" }}
           >
             Log Home Packages
