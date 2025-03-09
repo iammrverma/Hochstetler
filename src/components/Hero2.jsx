@@ -1,11 +1,10 @@
 import React from "react";
 
 const Hero2 = ({
+  children,
   extended,
   heading,
-  subheading,
   smallheading,
-  description,
   headingWrap,
   headingClass = "text-green",
   style,
@@ -27,24 +26,14 @@ const Hero2 = ({
             <div className="text-green-light uppercase">{smallheading}</div>
           )}
           <div className={`${headingWrap ? "flex" : ""}`}>
-            <h2  className={`heading-style-h1 ${headingClass}`}>
+            <h2 className={`heading-style-h1 ${headingClass}`}>
               {heading?.main}
               <span className="text-green-accent"> {heading?.span}</span>
             </h2>
           </div>
         </div>
 
-        <div>
-          {subheading && (
-            <h3
-              className={`heading-style-h4`}
-              style={{ paddingBottom: "1rem" }}
-            >
-              {subheading}
-            </h3>
-          )}
-          <p className="text-size-medium text-dark">{description}</p>
-        </div>
+        <div className="content-block-01">{children}</div>
       </div>
     </div>
   );

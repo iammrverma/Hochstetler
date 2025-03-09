@@ -23,12 +23,14 @@ const Hero1 = () => {
           gap: "1.5rem",
         }}
       >
+        <div className="hp-hero-spacer"></div>
+        <div className="hp-hero-spacer"></div>
         <h1 className="text-white">Log Home Living At Its Finest</h1>
         <p className="text-white heading-style-h4">
           Amerish classic log home for rich and woody Aesthetic
         </p>
         <p></p>
-        <ButtonPrimary text={"View Log Home Floor Plans"} to={"/floor-plans"}/>
+        <ButtonPrimary text={"View Log Home Floor Plans"} to={"/floor-plans"} />
       </div>
     </div>
   );

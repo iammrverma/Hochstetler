@@ -142,7 +142,16 @@ h3 {
   font-family: inter-variable, sans-serif;
   font-weight: 400;
 }
-
+.hero-pad {
+  /* z-index: 3; */
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  position: relative;
+}
+.hp-hero-spacer {
+  width: 100%;
+  min-height: 3vw;
+}
 .container-large-2 {
   width: 80%;
   margin-right: auto;
@@ -198,7 +207,10 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+a {
+  color: var(--base-color-hochstetler-brand--hlh-red);
+  text-decoration: underline;
+}
 p {
   max-width: 72ch;
 }
@@ -352,7 +364,7 @@ p {
   display: flex;
 }
 .select-content-block li {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.125rem;
 }
 .hlh_content_wrap {
@@ -361,6 +373,12 @@ p {
   flex-flow: column;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  display: flex;
+}
+.content-block-01 {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  flex-flow: column;
   display: flex;
 }
 .content-wrapper {
@@ -650,7 +668,7 @@ p {
   padding: 5rem;
 }
 .link {
-  color: var(--base-color-hochstetler-brand--hlh-green);
+  color: var(--base-color-hochstetler-brand--hlh-red);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -994,7 +1012,7 @@ p {
   align-items: start;
   padding-left: 2rem;
   padding-right: 2rem;
-  transition: border .2s,background-color .2s;
+  transition: border 0.2s, background-color 0.2s;
   display: grid;
 }
 .wide-cta-content {
@@ -1005,6 +1023,14 @@ p {
 }
 /* FOR MOBILE */
 @media (max-width: 1080px) {
+  .hero-pad {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.hp-hero-spacer {
+  width: 100%;
+  min-height: 6rem;
+}
   .heading-style-h1 {
     font-size: 2.5rem;
   }
@@ -1165,16 +1191,16 @@ p {
     padding-right: 2rem;
   }
   /* lhp */
-  .boxed-content-grid, .boxed-content-grid-alt{
+  .boxed-content-grid,
+  .boxed-content-grid-alt {
     grid-template-columns: 1fr;
   }
   .hlh-diff-1col-section {
-    
     padding: 3rem 2rem 1rem;
-}
-.wide-cta-grid {
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
-  grid-template-columns: 1fr;
-}
+  }
+  .wide-cta-grid {
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    grid-template-columns: 1fr;
+  }
 }
