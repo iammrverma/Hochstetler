@@ -1,10 +1,23 @@
-import React, { Children } from "react";
+import React from "react";
 import Header from "../components/Header";
 import Hero2 from "../components/Hero2";
 import Cluster from "../components/Cluster";
 import headerBg from "../assets/header-bg.png";
 import { useWindowSize } from "../contexts/WindowSizeContext";
-import lcd from "../assets/lcd.jpg";
+import lcd0 from "../assets/lcd0.jpg";
+import lcd1 from "../assets/lcd1.jpg";
+import lcd2 from "../assets/lcd2.jpg";
+import lcd3 from "../assets/lcd3.jpg";
+import lcd4 from "../assets/lcd4.jpg";
+import lcd5 from "../assets/lcd5.jpg";
+import lcd6 from "../assets/lcd6.jpg";
+import lcd7 from "../assets/lcd7.jpg";
+import lcd8 from "../assets/lcd8.jpg";
+import lcd9 from "../assets/lcd9.jpg";
+import lcd10 from "../assets/lcd10.jpg";
+import lcd11 from "../assets/lcd11.jpg";
+import lcd12 from "../assets/lcd12.jpg";
+
 import FloorPlanPitch from "../components/FloorPlanPitch";
 import ButtonPrimary from "../components/buttons/ButtonPrimary";
 const Card = ({ styles, reverse, children, src }) => {
@@ -50,7 +63,15 @@ const LogCabinDays = () => {
           <div className="heading-style-h1 display text-green text-center">
             Log Cabin <span className="text-green-accent">Days</span>
           </div>
-          {large && <Cluster styles={{ height: "100%" }} />}
+          {large && (
+            <Cluster
+              img0={lcd0}
+              img1={lcd1}
+              img2={lcd2}
+              img3={lcd3}
+              styles={{ height: "100%" }}
+            />
+          )}
         </div>
       </Header>
       <div className="lcd-info-banner">
@@ -90,7 +111,11 @@ const LogCabinDays = () => {
                   }}
                 >
                   <div className="flex-column">
-                    <img className="content-image-small" src={lcd} alt={lcd} />
+                    <img
+                      className="content-image-small"
+                      src={lcd4}
+                      alt={lcd4}
+                    />
                     <div className="flex-column" style={{ flex: "1" }}>
                       <div className="uui-space-small-5"></div>
                       <div className="uui-heading-xxsmall-2">
@@ -107,7 +132,11 @@ const LogCabinDays = () => {
                   </div>
 
                   <div className="flex-column">
-                    <img className="content-image-small" src={lcd} alt={lcd} />
+                    <img
+                      className="content-image-small"
+                      src={lcd5}
+                      alt={lcd5}
+                    />
                     <div className="uui-space-small-5"></div>
                     <div className="uui-heading-xxsmall-2">
                       Authentic Amish Cuisine
@@ -123,7 +152,11 @@ const LogCabinDays = () => {
                   </div>
                   <div className="flex-column">
                     {" "}
-                    <img className="content-image-small" src={lcd} alt={lcd} />
+                    <img
+                      className="content-image-small"
+                      src={lcd6}
+                      alt={lcd6}
+                    />
                     <div className="uui-space-small-5"></div>
                     <div className="uui-heading-xxsmall-2">
                       Rustic Furniture & Decor
@@ -138,7 +171,11 @@ const LogCabinDays = () => {
                     </div>
                   </div>
                   <div className="flex-column">
-                    <img className="content-image-small" src={lcd} alt={lcd} />
+                    <img
+                      className="content-image-small"
+                      src={lcd7}
+                      alt={lcd7}
+                    />
 
                     <div className="uui-space-small-5"></div>
                     <div className="uui-heading-xxsmall-2">
@@ -153,7 +190,11 @@ const LogCabinDays = () => {
                     </div>
                   </div>
                   <div className="flex-column">
-                    <img className="content-image-small" src={lcd} alt={lcd} />
+                    <img
+                      className="content-image-small"
+                      src={lcd8}
+                      alt={lcd8}
+                    />
 
                     <div className="uui-space-small-5"></div>
                     <div className="uui-heading-xxsmall-2">
@@ -167,7 +208,11 @@ const LogCabinDays = () => {
                     </div>
                   </div>
                   <div className="flex-column">
-                    <img className="content-image-small" src={lcd} alt={lcd} />
+                    <img
+                      className="content-image-small"
+                      src={lcd9}
+                      alt={lcd9}
+                    />
 
                     <div className="uui-space-small-5"></div>
                     <div className="uui-heading-xxsmall-2">
@@ -188,7 +233,7 @@ const LogCabinDays = () => {
         </div>
       </div>
       <Card
-        src={lcd}
+        src={lcd10}
         styles={{
           backgroundColor:
             "var(--base-color-hochstetler-brand--hlh-beige-light)",
@@ -207,7 +252,7 @@ const LogCabinDays = () => {
           <ButtonPrimary varient="green" text={"Learn More"} />
         </div>
       </Card>
-      <Card reverse src={lcd}>
+      <Card reverse src={lcd11}>
         <div className="flex-center">
           <Hero2
             style={{ padding: "0" }}
@@ -216,7 +261,7 @@ const LogCabinDays = () => {
           />
         </div>
       </Card>
-      <Card src={lcd}>
+      <Card src={lcd12}>
         <div className="flex-center">
           <Hero2
             style={{ padding: "0" }}
