@@ -214,6 +214,10 @@ a {
 p {
   max-width: 72ch;
 }
+.w-full{
+  width: 100%;
+  max-width: 100%;
+}
 .spacer-small {
   width: 100%;
   padding-top: 1rem;

@@ -7,6 +7,7 @@ const ButtonPrimary = ({
   to,
   varient = "primary",
   rightArrow = false,
+  icon,
   onClick,
 }) => {
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ const ButtonPrimary = ({
       >
         {text}
         {rightArrow && <i className="fa-solid fa-arrow-right"></i>}
+        {icon && icon}
       </div>
     </button>
   );

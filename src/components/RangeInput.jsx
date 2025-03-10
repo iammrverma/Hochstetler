@@ -5,22 +5,13 @@ import Typography from "@mui/material/Typography";
 
 const RangeInput = ({ min, max, lable, inputArea, setInputArea }) => {
   const handleChange = (event, newValue) => {
-    console.log(newValue);
-    
     setInputArea(newValue);
   };
 
   return (
     <Box sx={{ p: 2 }}>
       {/* Labels */}
-      <Box display="flex" justifyContent="space-between">
-        <Typography variant="body1">
-          {inputArea[0]} {lable}
-        </Typography>
-        <Typography variant="body1">
-          {inputArea[1]} {lable}
-        </Typography>
-      </Box>
+      
 
       {/* Range Slider */}
       <Slider
@@ -44,7 +35,16 @@ const RangeInput = ({ min, max, lable, inputArea, setInputArea }) => {
           },
         }}
       />
+      <Box display="flex" justifyContent="space-between">
+        <Typography variant="body1">
+          {inputArea[0]} {lable}
+        </Typography>
+        <Typography variant="body1">
+          {inputArea[1]} {lable}
+        </Typography>
+      </Box>
     </Box>
+    
   );
 };
 
