@@ -170,7 +170,7 @@ const TestimonialPitch = () => {
       </div>
       <ButtonPrimary
         text={"Read Our Testimonials"}
-        to={"/resources/testimonials"}
+        to={"/testimonials"}
       />
     </div>
   );

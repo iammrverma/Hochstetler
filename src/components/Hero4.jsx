@@ -1,32 +1,36 @@
 import React from "react";
 import ButtonPrimary from "./buttons/ButtonPrimary";
 import hero2img from "../assets/hero2.jpg";
-const Hero4 = () => {
+import image from "../assets/houseOnly.png";
+const Hero4 = ({ heading, description }) => {
   return (
-    <div className="grid-2-1 min-h-full" style={{padding:"0"}}>
+    <div className="grid-2-1 min-h-full" style={{ padding: "0" }}>
       <div className="flex-center">
         <img src={hero2img} alt="" style={{ width: "100%", height: "100%" }} />
       </div>
       <div
         className="flex-column"
         style={{
-          maxWidth: "80rem",
           padding: "2rem",
           backgroundColor: `var(--base-color-hochstetler-brand--hlh-green)`,
           gap: "1.5rem",
           alignItems: "flex-start",
-          justifyContent: "center",
-          padding: "5rem 2rem",
+          justifyContent: "flex-start",
+          padding: "5rem 4rem",
+          minWidth: "50%",
         }}
       >
-        <h1 className="text-white">
-          <span style={{ whiteSpace: "nowrap" }}>Come Home to </span> <br />
-          <span className="text-green-accent">craftmanship.</span>
+        <img
+          src={image}
+          alt={image}
+          style={{ display: "inline-block", width: "180px" }}
+        />
+        <h1 className="text-white heading-style-displayh1">
+          {heading?.main}
+          <span className="text-green-accent">{" "}{heading?.span}</span>
         </h1>
-        <p className="text-white">
-          Amerish classic log home for rich and woody Aesthetic
-        </p>
-        <ButtonPrimary text={"View Log Home Floor Plans"} />
+        <p className="text-white text-size-med">{description}</p>
+        <ButtonPrimary text={"Our Log Home Packages"} to={"/difference"}/>
       </div>
     </div>
   );

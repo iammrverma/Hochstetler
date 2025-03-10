@@ -1,19 +1,19 @@
 import React from "react";
 
 const Hero2 = ({
+  children,
   extended,
   heading,
-  subheading,
   smallheading,
-  description,
   headingWrap,
+  headingClass = "text-green",
   style,
 }) => {
   return (
     <div
       className="hero2"
       style={{
-        padding: "2rem 1rem",
+        padding: "2rem 4rem",
         ...style,
       }}
     >
@@ -26,20 +26,14 @@ const Hero2 = ({
             <div className="text-green-light uppercase">{smallheading}</div>
           )}
           <div className={`${headingWrap ? "flex" : ""}`}>
-            <h3 className="text-green">{heading?.main}</h3>
-            {!extended && <span>&nbsp;</span>}
-            <h3 className="text-green-accent">{heading?.span}</h3>
+            <h2 className={`heading-style-h1 ${headingClass}`}>
+              {heading?.main}
+              <span className="text-green-accent"> {heading?.span}</span>
+            </h2>
           </div>
         </div>
 
-        <div>
-          {subheading && (
-            <h3 className={`text-dark `} style={{ paddingBottom: "1rem" }}>
-              {subheading}
-            </h3>
-          )}
-          <p className="text-size-regular">{description}</p>
-        </div>
+        <div className="content-block-01">{children}</div>
       </div>
     </div>
   );

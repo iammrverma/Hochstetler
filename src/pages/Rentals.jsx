@@ -75,11 +75,13 @@ const Rentals = () => {
           style={{ padding: "0" }}
           heading={{ main: "Live The", span: "Log Home Lifestyle" }}
           smallheading={"Experience Hochstetler"}
-          description={
-            "Wondering what it feels like to wake up surrounded by the warmth and character of a Hochstetler log home? We understand the dream—and invite you to experience it firsthand."
-          }
-          headingWrap={large}
-        />
+        >
+          <p className="text-dark">
+            Wondering what it feels like to wake up surrounded by the warmth and
+            character of a Hochstetler log home? We understand the dream—and
+            invite you to experience it firsthand.
+          </p>
+        </Hero2>
       </Header>
       <div style={{ padding: large ? "0 6rem" : "0 2rem", width: "100%" }}>
         <h3 className="text-green">Immerse yourself in peace and comfort.</h3>

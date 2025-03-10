@@ -2,12 +2,10 @@ import React, { useRef } from "react";
 import Hero2 from "./Hero2";
 import ButtonPrimary from "./buttons/ButtonPrimary";
 import VerticalList from "./VerticalList";
-import floorPlan1 from "../assets/floor-plan-1.jpg";
-import floorPlan2 from "../assets/floor-plan-2.jpg";
-import floorPlan3 from "../assets/floor-plan-3.jpg";
 import FloorPlanCard, { FloorPlanCardMinimal } from "./FloorPlanCard";
 import { useWindowSize } from "../contexts/WindowSizeContext";
 import { floorPlans } from "../../public/data";
+import { Link } from "react-router-dom";
 const FloorPlanPitch = () => {
   const { width } = useWindowSize();
   const large = width > 1080;
@@ -21,9 +19,6 @@ const FloorPlanPitch = () => {
     const secondList = secondListRef.current;
 
     if (!firstList || !secondList) return;
-
-    // Prevent parent container scrolling by default
-    e.preventDefault();
 
     // Check if the first list can scroll further
     const firstScrollableDown =
@@ -72,13 +67,23 @@ const FloorPlanPitch = () => {
       >
         <Hero2
           heading={{ main: "Find Your Ideal", span: "Floor Plan" }}
-          description={`Step into a space crafted just for you. Explore customizable log home floor plans with every detail thoughtfully designed for connection and comfort.`}
           style={{ padding: "0" }}
-        />
-        <p>
-          Already have a floor plan? Bring us your ideas and our team of
-          designers can help you make your custom log home a reality.
-        </p>
+        >
+          <p>
+            Step into a space crafted just for you. Explore customizable log
+            home floor plans with every detail thoughtfully designed for
+            connection and comfort.
+          </p>
+          <p>
+            Already have a floor plan?{" "}
+            <Link className="link" to="/contact">
+              Bring us your ideas
+            </Link>{" "}
+            and our team of designers can help you make your custom log home a
+            reality.
+          </p>
+        </Hero2>
+
         {large && (
           <div>
             <ButtonPrimary
@@ -111,23 +116,8 @@ const FloorPlanPitch = () => {
                 padding: "0.5rem",
               }}
             >
-              <VerticalList
-                list={[
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                ]}
-              >
-                {(data) => (
-                  <FloorPlanCardMinimal
-                    src={data.src}
-                    to={data.to}
-                    title={data.title}
-                  />
-                )}
+              <VerticalList list={floorPlans.slice(0, floorPlans.length / 2)}>
+                {(data) => <FloorPlanCardMinimal title={data.title} />}
               </VerticalList>
             </div>
 
@@ -142,23 +132,10 @@ const FloorPlanPitch = () => {
               }}
             >
               <VerticalList
-                list={[
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan1, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan2, to: "#", title: "Eagle Point Log Home" },
-                  { src: floorPlan3, to: "#", title: "Eagle Point Log Home" },
-                ]}
+                list={floorPlans.slice(floorPlans.length / 2)}
                 styles={{ paddingTop: "5rem" }}
               >
-                {(data) => (
-                  <FloorPlanCardMinimal
-                    src={data.src}
-                    to={data.to}
-                    title={data.title}
-                  />
-                )}
+                {(data) => <FloorPlanCardMinimal title={data.title} />}
               </VerticalList>
             </div>
           </>
@@ -174,17 +151,7 @@ const FloorPlanPitch = () => {
               }}
             >
               <VerticalList list={floorPlans.slice(0, 5)}>
-                {(data) => (
-                  <FloorPlanCard
-                    plan={{
-                      ...data,
-                      area: 250,
-                      bedrooms: 2,
-                      bathrooms: 3,
-                      title: "title",
-                    }}
-                  />
-                )}
+                {(data) => <FloorPlanCard plan={data} />}
               </VerticalList>
             </div>
             <ButtonPrimary

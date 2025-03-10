@@ -5,14 +5,19 @@ import rentalsImg2 from "../assets/rentalsImg2.jpg";
 import rentalsImg3 from "../assets/rentalsImg3.jpg";
 import rentalsImg4 from "../assets/rentalsImg4.jpg";
 import { useWindowSize } from "../contexts/WindowSizeContext";
-const Cluster = () => {
+const Cluster = ({
+  img0 = rentalsImg,
+  img1 = rentalsImg2,
+  img2 = rentalsImg3,
+  img3 = rentalsImg4,
+}) => {
   const { width } = useWindowSize();
   const large = width > 1080;
   return (
     <div className="flex-center" style={{ position: "relative" }}>
       <img
-        src={rentalsImg}
-        alt={rentalsImg}
+        src={img0}
+        alt={img0}
         style={{
           width: `${large ? "50%" : "100%"}`,
           height: `${large ? "90%" : "100%"}`,
@@ -22,8 +27,8 @@ const Cluster = () => {
       />
       {large && (
         <img
-          src={rentalsImg2}
-          alt={rentalsImg2}
+          src={img1}
+          alt={img1}
           style={{
             display: `${large ? "block" : "none"}`,
             position: "absolute",
@@ -41,8 +46,8 @@ const Cluster = () => {
 
       {large && (
         <img
-          src={rentalsImg3}
-          alt={rentalsImg3}
+          src={img2}
+          alt={img2}
           style={{
             display: `${large ? "block" : "none"}`,
             position: "absolute",
@@ -60,8 +65,8 @@ const Cluster = () => {
       )}
       {large && (
         <img
-          src={rentalsImg4}
-          alt={rentalsImg4}
+          src={img3}
+          alt={img3}
           style={{
             display: `${large ? "block" : "none"}`,
             position: "absolute",

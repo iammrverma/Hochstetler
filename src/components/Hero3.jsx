@@ -1,10 +1,7 @@
 import React from "react";
-
-import hero2img from "../assets/hero2.jpg";
-import hero1img from "../assets/hero1.webp";
 import ButtonPrimary from "./buttons/ButtonPrimary";
-import PlaceCard from "./PlaceCard";
-
+import ProjectGalleryCard from "./ProjectGalleryCard";
+import { projects } from "../../public/data";
 const Hero3 = () => {
   return (
     <div
@@ -12,12 +9,15 @@ const Hero3 = () => {
       style={{ padding: "6rem 3rem", alignItems: "center", gap: "3rem" }}
     >
       <div className="grid-4-1">
-        <PlaceCard src={hero1img} title="Place name" location={"location"} />
-        <PlaceCard src={hero2img} title="Place name" location={"location"} />
-        <PlaceCard src={hero1img} title="Place name" location={"location"} />
-        <PlaceCard src={hero2img} title="Place name" location={"location"} />
+        {projects.slice(0, 4).map((project, index) => (
+          <ProjectGalleryCard
+            key={index}
+            title={project.title}
+            location={project.location}
+          />
+        ))}
       </div>
-      <ButtonPrimary text={"View Our projects"} />
+      <ButtonPrimary text={"View Our projects"} to={"/project-gallery"} />
     </div>
   );
 };

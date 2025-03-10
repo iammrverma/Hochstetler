@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const Input = ({
-  value = "",
-  setValue = () => {},
+  value ,
+  setValue, 
   type = "email",
   placeholder = "Enter Email",
 }) => {
@@ -32,6 +32,7 @@ const Input = ({
         boxShadow: "0 1px 2px #1018280d",
         backgroundColor: "var(--untitled-ui-white)",
         color: "var(--base-color-hochstetler-brand--hlh-green)",
+        width:"100%",
         borderColor: isFocused
           ? "var(--base-color-hochstetler-brand--hlh-green-accent)"
           : "var(--untitled-ui--white)",

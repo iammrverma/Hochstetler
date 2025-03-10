@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchInput = ({ styles, title }) => {
+const SearchInput = ({ styles, title, value, setValue }) => {
   return (
     <div
       className="inputBox flex"
@@ -30,6 +30,8 @@ const SearchInput = ({ styles, title }) => {
       <input
         type="text"
         placeholder={title}
+        value={value}
+        onChange={setValue}
         style={{
           outline: "none",
           border: "none",

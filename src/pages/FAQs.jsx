@@ -58,24 +58,25 @@ const FAQs = () => {
             visibleTopic = entry.target.id;
           }
         });
-        if (visibleTopic) setCurrentTopic(visibleTopic);
+        if (visibleTopic) {
+          setCurrentTopic(visibleTopic);
+        }
       },
       {
-        root: null,
-        rootMargin: "-50% 0px -50% 0px",
-        threshold: 0.5,
+        root: null, // Observes viewport
+        rootMargin: "-30% 0px -30% 0px", // Adjusted margin
+        threshold: 0.3, // Lower threshold for triggering
       }
     );
 
-    // Attach observer to all topics
-    Object.values(topicsRef.current).forEach((el) => {
-      if (el) observer.observe(el);
-    });
+    // Ensure refs are populated before observing
+    const elements = Object.values(topicsRef.current).filter(Boolean);
+    if (elements.length > 0) {
+      elements.forEach((el) => observer.observe(el));
+    }
 
     return () => {
-      Object.values(topicsRef.current).forEach((el) => {
-        if (el) observer.unobserve(el);
-      });
+      elements.forEach((el) => observer.unobserve(el));
     };
   }, []);
 
@@ -114,9 +115,7 @@ const FAQs = () => {
             <div key={href}>
               <h3
                 className="text-green"
-                ref={(el) => {
-                  if (el) topicsRef.current[href] = el;
-                }}
+                ref={(el) => (topicsRef.current[href] = el)}
                 id={href}
               >
                 {topic}

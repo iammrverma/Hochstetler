@@ -43,7 +43,7 @@ const FaqPitch = () => {
           to guide you.
         </p>
         <div>
-          <ButtonPrimary text={"See our FAQ"} />
+          <ButtonPrimary text={"See our FAQ"} to={"/faqs"} />
         </div>
       </div>
       <div

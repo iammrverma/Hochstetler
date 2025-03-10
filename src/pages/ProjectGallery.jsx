@@ -1,44 +1,36 @@
 import React from "react";
 import Hero2 from "../components/Hero2";
 import Header from "../components/Header";
+import FloorPlanPitch from "../components/FloorPlanPitch";
 import Cluster from "../components/Cluster";
 import headerBg from "../assets/header-bg.png";
 import { useWindowSize } from "../contexts/WindowSizeContext";
-import PlaceCard from "../components/PlaceCard";
+import ProjectGalleryCard from "../components/ProjectGalleryCard";
+import { projects } from "../../public/data";
 
-import hero2img from "../assets/hero2.jpg";
-import hero1img from "../assets/hero1.webp";
-const ProjectGalleryRow = ({ card1, card2, card3, large }) => {
-  const repeat = large ? 3 : 2;
+export const ProjectGalleryRow = ({ projects, projectsPerRow }) => {
+  const repeat = projectsPerRow;
+  console.log(projects, projectsPerRow);
+  
   return (
     <div
       className="grid"
       style={{ gridTemplateColumns: `repeat(${repeat}, 1fr)`, gap: "1rem" }}
     >
-      <PlaceCard
-        src={card1.src}
-        title={card1.title}
-        location={card1.location}
-      />
-      <PlaceCard
-        src={card2.src}
-        title={card2.title}
-        location={card2.location}
-      />
-
-      {large && (
-        <PlaceCard
-          src={card3.src}
-          title={card3.title}
-          location={card3.location}
-        />
-      )}
+      {projects.map((project) => (
+        <ProjectGalleryCard title={project.title}  />
+      ))}
     </div>
   );
 };
 const ProjectGallery = () => {
   const { width } = useWindowSize();
   const large = width > 1080;
+  const projectsPerRow = large ? 3 : 2; // Define number of projects per row
+  const projectChunks = [];
+  for (let i = 0; i < projects.length; i += projectsPerRow) {
+    projectChunks.push(projects.slice(i, i + projectsPerRow));
+  }
   return (
     <div className="flex-column" style={{ gap: "2rem" }}>
       <Header backgroundImage={headerBg} styles={{ padding: "0" }}>
@@ -59,43 +51,15 @@ const ProjectGallery = () => {
         </div>
       </Header>
       <div className="flex-column" style={{ gap: "3rem", padding: "0 4rem" }}>
-        <ProjectGalleryRow
-          large={large}
-          card1={{ src: hero1img, title: "title", location: "location" }}
-          card2={{ src: hero2img, title: "title", location: "location" }}
-          card3={{ src: hero1img, title: "title", location: "location" }}
-        />
-        <ProjectGalleryRow
-          large={large}
-          card1={{ src: hero1img, title: "title", location: "location" }}
-          card2={{ src: hero2img, title: "title", location: "location" }}
-          card3={{ src: hero1img, title: "title", location: "location" }}
-        />
-        <ProjectGalleryRow
-          large={large}
-          card1={{ src: hero1img, title: "title", location: "location" }}
-          card2={{ src: hero2img, title: "title", location: "location" }}
-          card3={{ src: hero1img, title: "title", location: "location" }}
-        />
-        <ProjectGalleryRow
-          large={large}
-          card1={{ src: hero1img, title: "title", location: "location" }}
-          card2={{ src: hero2img, title: "title", location: "location" }}
-          card3={{ src: hero1img, title: "title", location: "location" }}
-        />
-        <ProjectGalleryRow
-          large={large}
-          card1={{ src: hero1img, title: "title", location: "location" }}
-          card2={{ src: hero2img, title: "title", location: "location" }}
-          card3={{ src: hero1img, title: "title", location: "location" }}
-        />
-        <ProjectGalleryRow
-          large={large}
-          card1={{ src: hero1img, title: "title", location: "location" }}
-          card2={{ src: hero2img, title: "title", location: "location" }}
-          card3={{ src: hero1img, title: "title", location: "location" }}
-        />
+        {projectChunks.map((chunk, index) => (
+          <ProjectGalleryRow
+            key={index}
+            projects={chunk}
+            projectsPerRow={projectsPerRow}
+          />
+        ))}
       </div>
+      <FloorPlanPitch />
     </div>
   );
 };

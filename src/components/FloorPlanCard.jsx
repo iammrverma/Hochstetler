@@ -6,14 +6,16 @@ import Bathtub from "./svgs/Bathtub";
 import House from "./svgs/House";
 import defaultImg from "/floorPlansImages/acadia_log_home.jpg";
 import { useFloorPlans } from "../contexts/FloorPlanContext";
-export const FloorPlanCardMinimal = ({ src, to, title }) => {
+export const FloorPlanCardMinimal = ({ title }) => {
   const navigate = useNavigate();
+  const src = `/Hochstetler/floorPlansImages/${title.replace(/ /g, "_")}.jpg`; // adding hochstetler here is important
+  const to = `/floor-plans/${title.replace(/ /g, "_")}`;
   return (
     <div className="fp-minimal" onClick={() => navigate(to)}>
       <div>
         <img
           src={src}
-          alt="src "
+          alt={src}
           style={{
             width: "100%",
             maxHeight: "220px",
@@ -36,8 +38,7 @@ const FloorPlanCard = ({ plan }) => {
   const { setSelectedFloorPlan } = useFloorPlans();
   const { title, area, bedrooms, bathrooms } = plan;
   const src = `/Hochstetler/floorPlansImages/${title.replace(/ /g, "_")}.jpg`; // adding hochstetler here is important
-  const to = `./${title.replace(/ /g, "_")}`;
-  
+  const to = `/floor-plans/${title.replace(/ /g, "_")}`;
 
   const handleClick = (e) => {
     setSelectedFloorPlan(plan);

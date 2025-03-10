@@ -117,27 +117,30 @@ const Testimonials = () => {
   const large = width > 1080;
   return (
     <div>
-      <Header backgroundImage={headerBg} image={image}>
+      <Header backgroundImage={headerBg} image={image} styles={{padding:""}}>
         <Hero2
           heading={{ main: "Stories from", span: "Our Clients" }}
           smallheading={"Built on trust"}
-          description={
-            "Meet homeowners who have built their dream log homes with us."
-          }
           headingWrap={large}
-        />
+          style={{padding:"2rem"}}
+        >
+          <div className="text-dark">
+
+          Meet homeowners who have built their dream log homes with us.
+          </div>
+        </Hero2>
       </Header>
       <h3 className={"text-green text-center"}>In their words</h3>
       <div
         style={{
-          padding: "4rem 0",
+          padding: "1rem",
           marginInline: "auto",
         }}
       >
         <TestimonialList
           testimonials={testimonialData}
-          width={"50rem"}
-          styles={{ marginInline: "auto", width: "50rem" }}
+          
+          styles={{ marginInline: "auto", width:`${large?'50rem':'100%'}` }}
         />
       </div>
     </div>

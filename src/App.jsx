@@ -1,11 +1,6 @@
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-// import AboutUs from "./components/AboutUs";
-// import Services from "./components/Services";
-// import Portfolio from "./components/Portfolio";
-// import Contact from "./components/Contact";
-
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
@@ -44,30 +39,27 @@ const App = () => {
             <Route path="/floor-plans" element={<FloorPlans />} />
             <Route path="/floor-plans/:name" element={<FloorPlanDetail />} />
 
+            <Route path="/project-gallery" element={<ProjectGallery />} />
             <Route
-              path="/gallery/project-gallery"
-              element={<ProjectGallery />}
-            />
-            <Route
-              path="/gallery/project-gallery/:name"
+              path="/project-gallery/:name"
               element={<ExtendedProjectGalery />}
             />
 
-            <Route path="/gallery/home-tour-360" element={<HomeTour360 />} />
+            <Route path="/home-tour-360" element={<HomeTour360 />} />
 
-            <Route path="/resources/blogs" element={<Blogs />} />
-            <Route path="/resources/blogs/:name" element={<BlogDetail />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:name" element={<BlogDetail />} />
 
-            <Route path="/resources/testimonials" element={<Testimonials />} />
-            <Route path="/resources/faqs" element={<FAQs />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/faqs" element={<FAQs />} />
 
-            <Route path="/about-us/difference" element={<Difference />} />
-            <Route path="/about-us/rentals" element={<Rentals />} />
+            <Route path="/difference" element={<Difference />} />
+            <Route path="/rentals" element={<Rentals />} />
             <Route
-              path="/about-us/speciality-structures"
+              path="/speciality-structures"
               element={<SpecialityStructures />}
             />
-            <Route path="/about-us/commercials" element={<Commercials />} />
+            <Route path="/commercials" element={<Commercials />} />
 
             <Route path="/log-cabin-days" element={<LogCabinDays />} />
             <Route path="/pricing" element={<Pricing />} />
