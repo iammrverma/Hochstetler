@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import SearchInput from "../components/SearchInput";
 import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "../components/buttons/ButtonPrimary";
 import { blogs } from "../../public/data";
 import { capitalize } from "../util";
+import NewsLetteCard, { NoImageNewsLetter } from "../components/NewsLetteCard";
 
 export const BlogCard = ({ title }) => {
   const navigate = useNavigate();
@@ -87,6 +88,7 @@ const Blogs = () => {
           ))}
         </div>
       </div>
+      <NoImageNewsLetter />
     </div>
   );
 };

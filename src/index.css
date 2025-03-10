@@ -685,6 +685,7 @@ p {
   gap: 2rem;
   width: 100%;
   max-width: 800px;
+  text-align: center;
 }
 .fp {
   border-top-left-radius: var(--radius--radius-med);
