@@ -6,7 +6,6 @@ import headerBg from "../assets/header-bg.png";
 import Hero2 from "../components/Hero2";
 import { projects } from "../../public/data";
 import ButtonPrimary from "../components/buttons/ButtonPrimary";
-import { ProjectGalleryRow } from "./ProjectGallery";
 import { useWindowSize } from "../contexts/WindowSizeContext";
 import ProjectGalleryCard from "../components/ProjectGalleryCard";
 import FloorPlanPitch from "../components/FloorPlanPitch";
@@ -56,10 +55,13 @@ const ExtendedProjectGalery = () => {
             <Hero2
               smallheading={project.location}
               heading={{ main: title }}
-              description={project.description}
               headingClass="text-dark"
               style={{ padding: "3rem 0" }}
-            />
+            >
+              <div className="text-size-regular text-dark">
+                {project.description}
+              </div>
+            </Hero2>
           </div>
         </div>
       </Header>
@@ -103,8 +105,8 @@ const ExtendedProjectGalery = () => {
               gap: "1rem",
             }}
           >
-            {project.suggetions.map((suggetions) => (
-              <ProjectGalleryCard title={suggetions} />
+            {project.suggetions.map((suggetion, index) => (
+              <ProjectGalleryCard title={suggetion} key={index} />
             ))}
           </div>
           <ButtonPrimary text={"More Projects"} to="/project-gallery" />

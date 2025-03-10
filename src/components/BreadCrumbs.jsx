@@ -9,16 +9,11 @@ const Breadcrumbs = ({ text, to }) => {
   const lastTwoParts = pathParts.slice(-2); // Get last two elements
 
   return (
-    <div className="bredcrumbs" style={{ fontSize: "1rem" }}>
-      <span className="pointer" onClick={() => navigate("/")}>
-        Home
-      </span>
-      {lastTwoParts.length > 0 && " > "}
-
+    <div className="bredcrumbs" style={{ fontSize: "1rem", fontWeight:"500" }}>
       {lastTwoParts.length === 2 && (
         <>
           <span
-            className="pointer"
+            className="pointer text-green-light"
             onClick={() => navigate(to ? to : `/${lastTwoParts[0]}`)}
           >
             {text ? text : capitalize(lastTwoParts[0].replace(/-/g, " "))}

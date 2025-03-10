@@ -106,6 +106,7 @@ export const projects = [
     location: "ohio",
     description: `The Arni family’s log home is more than just a house—it’s a testament to resilience, faith, and the love that fills every room. After losing their original home in a devastating explosion, Mark and Chris rebuilt, creating a space that not only accommodates their growing family—including four biological and four adopted children—but also reflects their deep sense of purpose. Based on the Orchardview plan, their home was customized with extra bedrooms, a play loft, and practical spaces tailored to their unique needs. Vibrant murals, personal touches, and inspirational passages make this home a warm, joyful sanctuary where every detail tells a story of strength and gratitude.`,
     suggetions: ["young log home"], // TODO: Add the correct suggestions accordingly
+    plan:"young log home",
     images: 12,
   },
 

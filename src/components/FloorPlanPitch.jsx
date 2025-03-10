@@ -5,10 +5,9 @@ import VerticalList from "./VerticalList";
 import FloorPlanCard, { FloorPlanCardMinimal } from "./FloorPlanCard";
 import { useWindowSize } from "../contexts/WindowSizeContext";
 import { floorPlans } from "../../public/data";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const FloorPlanPitch = () => {
   const { width } = useWindowSize();
-  const navigate = useNavigate();
   const large = width > 1080;
   const firstListRef = useRef(null);
   const secondListRef = useRef(null);
@@ -20,9 +19,6 @@ const FloorPlanPitch = () => {
     const secondList = secondListRef.current;
 
     if (!firstList || !secondList) return;
-
-    // Prevent parent container scrolling by default
-    e.preventDefault();
 
     // Check if the first list can scroll further
     const firstScrollableDown =
